@@ -1977,6 +1977,11 @@ vite@^4.1.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
+wawa-lipsync@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/wawa-lipsync/-/wawa-lipsync-0.0.1.tgz#77d62b47967cd730f09283030afd3fd2bf6c46a8"
+  integrity sha512-4ynJX3LcztOi1vvnfzxxXiqewYxd1teY2EpQ+YfOT8T0WvUXlRouJ15gaBXabFe8eHq2EB8C5X5aGYxrNM1Daw==
+
 webgl-constants@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/webgl-constants/-/webgl-constants-1.1.1.tgz#f9633ee87fea56647a60b9ce735cbdfb891c6855"

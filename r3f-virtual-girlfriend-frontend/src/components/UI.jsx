@@ -7,9 +7,13 @@ export const UI = ({ hidden, ...props }) => {
 
   const sendMessage = () => {
     const text = input.current.value;
+    console.log("🎯 UI sendMessage called with:", { text, loading, message });
     if (!loading && !message) {
+      console.log("✅ Conditions met, calling chat()");
       chat(text);
       input.current.value = "";
+    } else {
+      console.log("❌ Conditions not met:", { loading, message });
     }
   };
   if (hidden) {

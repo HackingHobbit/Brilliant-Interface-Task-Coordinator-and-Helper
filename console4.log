@@ -1,0 +1,1574 @@
+ [vite] connecting...
+ [vite] connected.
+ Available voices: []
+ Selected voice: undefined undefined
+ Available voices: (192) ['Samantha (en-US)', 'Aaron (en-US)', 'Albert (en-US)', 'Alice (it-IT)', 'Alva (sv-SE)', 'Amélie (fr-CA)', 'Amira (ms-MY)', 'Anna (de-DE)', 'Arthur (en-GB)', 'Bad News (en-US)', 'Bahh (en-US)', 'Bells (en-US)', 'Boing (en-US)', 'Bubbles (en-US)', 'Carmit (he-IL)', 'Catherine (en-AU)', 'Cellos (en-US)', 'Damayanti (id-ID)', 'Daniel (English (United Kingdom)) (en-GB)', 'Daniel (French (France)) (fr-FR)', 'Daria (bg-BG)', 'Eddy (German (Germany)) (de-DE)', 'Eddy (English (United Kingdom)) (en-GB)', 'Eddy (English (United States)) (en-US)', 'Eddy (Spanish (Spain)) (es-ES)', 'Eddy (Spanish (Mexico)) (es-MX)', 'Eddy (Finnish (Finland)) (fi-FI)', 'Eddy (French (Canada)) (fr-CA)', 'Eddy (French (France)) (fr-FR)', 'Eddy (Italian (Italy)) (it-IT)', 'Eddy (Japanese (Japan)) (ja-JP)', 'Eddy (Korean (South Korea)) (ko-KR)', 'Eddy (Portuguese (Brazil)) (pt-BR)', 'Eddy (Chinese (China mainland)) (zh-CN)', 'Eddy (Chinese (Taiwan)) (zh-TW)', 'Ellen (nl-BE)', 'Flo (German (Germany)) (de-DE)', 'Flo (English (United Kingdom)) (en-GB)', 'Flo (English (United States)) (en-US)', 'Flo (Spanish (Spain)) (es-ES)', 'Flo (Spanish (Mexico)) (es-MX)', 'Flo (Finnish (Finland)) (fi-FI)', 'Flo (French (Canada)) (fr-CA)', 'Flo (French (France)) (fr-FR)', 'Flo (Italian (Italy)) (it-IT)', 'Flo (Japanese (Japan)) (ja-JP)', 'Flo (Korean (South Korea)) (ko-KR)', 'Flo (Portuguese (Brazil)) (pt-BR)', 'Flo (Chinese (China mainland)) (zh-CN)', 'Flo (Chinese (Taiwan)) (zh-TW)', 'Fred (en-US)', 'Good News (en-US)', 'Gordon (en-AU)', 'Grandma (German (Germany)) (de-DE)', 'Grandma (English (United Kingdom)) (en-GB)', 'Grandma (English (United States)) (en-US)', 'Grandma (Spanish (Spain)) (es-ES)', 'Grandma (Spanish (Mexico)) (es-MX)', 'Grandma (Finnish (Finland)) (fi-FI)', 'Grandma (French (Canada)) (fr-CA)', 'Grandma (French (France)) (fr-FR)', 'Grandma (Italian (Italy)) (it-IT)', 'Grandma (Japanese (Japan)) (ja-JP)', 'Grandma (Korean (South Korea)) (ko-KR)', 'Grandma (Portuguese (Brazil)) (pt-BR)', 'Grandma (Chinese (China mainland)) (zh-CN)', 'Grandma (Chinese (Taiwan)) (zh-TW)', 'Grandpa (German (Germany)) (de-DE)', 'Grandpa (English (United Kingdom)) (en-GB)', 'Grandpa (English (United States)) (en-US)', 'Grandpa (Spanish (Spain)) (es-ES)', 'Grandpa (Spanish (Mexico)) (es-MX)', 'Grandpa (Finnish (Finland)) (fi-FI)', 'Grandpa (French (Canada)) (fr-CA)', 'Grandpa (French (France)) (fr-FR)', 'Grandpa (Italian (Italy)) (it-IT)', 'Grandpa (Japanese (Japan)) (ja-JP)', 'Grandpa (Korean (South Korea)) (ko-KR)', 'Grandpa (Portuguese (Brazil)) (pt-BR)', 'Grandpa (Chinese (China mainland)) (zh-CN)', 'Grandpa (Chinese (Taiwan)) (zh-TW)', 'Hattori (ja-JP)', 'Helena (de-DE)', 'Ioana (ro-RO)', 'Jacques (fr-FR)', 'Jester (en-US)', 'Joana (pt-PT)', 'Junior (en-US)', 'Kanya (th-TH)', 'Karen (en-AU)', 'Kathy (en-US)', 'Kyoko (ja-JP)', 'Lana (hr-HR)', 'Laura (sk-SK)', 'Lekha (hi-IN)', 'Lesya (uk-UA)', 'Li-Mu (zh-CN)', 'Linh (vi-VN)', 'Luciana (pt-BR)', 'Majed (ar-001)', …]
+ Selected voice: Arthur en-GB
+[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See <URL>
+chunk-mgcl-DAQYA7TD.js:16 @import rules are not allowed here. See https://github.com/WICG/construct-stylesheets/issues/119#issuecomment-588352418.
+(anonymous) @ chunk-mgcl-DAQYA7TD.js:16
+await in (anonymous)
+(anonymous) @ chunk-mgcl-DAQYA7TD.js:16
+(anonymous) @ chunk-mgcl-WQN5JPZJ.js:1
+(anonymous) @ chunk-mgcl-WQN5JPZJ.js:1
+vl @ chunk-mgcl-DT437CWL.js:8
+qn @ chunk-mgcl-DT437CWL.js:8
+ms @ chunk-mgcl-DT437CWL.js:8
+vn @ chunk-mgcl-DT437CWL.js:6
+Te @ chunk-mgcl-DT437CWL.js:8
+ad @ chunk-mgcl-DT437CWL.js:6
+next @ chunk-mgcl-X3BOXWJK.js:1
+r.next @ chunk-mgcl-52COTP23.js:3
+e._next @ chunk-mgcl-52COTP23.js:3
+e.next @ chunk-mgcl-52COTP23.js:3
+(anonymous) @ chunk-mgcl-52COTP23.js:3
+p._next @ chunk-mgcl-52COTP23.js:3
+e.next @ chunk-mgcl-52COTP23.js:3
+(anonymous) @ chunk-mgcl-PAYEFVAT.js:1
+(anonymous) @ chunk-mgcl-PAYEFVAT.js:1
+Promise.then
+ft @ chunk-mgcl-PAYEFVAT.js:1
+(anonymous) @ chunk-mgcl-PAYEFVAT.js:1
+r._trySubscribe @ chunk-mgcl-52COTP23.js:3
+(anonymous) @ chunk-mgcl-52COTP23.js:3
+K @ chunk-mgcl-52COTP23.js:3
+r.subscribe @ chunk-mgcl-52COTP23.js:3
+(anonymous) @ chunk-mgcl-52COTP23.js:3
+(anonymous) @ chunk-mgcl-52COTP23.js:3
+(anonymous) @ chunk-mgcl-52COTP23.js:3
+K @ chunk-mgcl-52COTP23.js:3
+r.subscribe @ chunk-mgcl-52COTP23.js:3
+(anonymous) @ chunk-mgcl-X3BOXWJK.js:1
+vl @ chunk-mgcl-DT437CWL.js:8
+qn @ chunk-mgcl-DT437CWL.js:8
+zn @ chunk-mgcl-DT437CWL.js:8
+Id @ chunk-mgcl-DT437CWL.js:8
+kl @ chunk-mgcl-DT437CWL.js:8
+ve.render @ chunk-mgcl-DT437CWL.js:8
+O3 @ chunk-mgcl-DAQYA7TD.js:16
+F3 @ chunk-mgcl-DAQYA7TD.js:16
+await in F3
+(anonymous) @ chunk-mgcl-DAQYA7TD.js:16
+ Available morph targets: (67) ['viseme_sil', 'viseme_PP', 'viseme_FF', 'viseme_TH', 'viseme_DD', 'viseme_kk', 'viseme_CH', 'viseme_SS', 'viseme_nn', 'viseme_RR', 'viseme_aa', 'viseme_E', 'viseme_I', 'viseme_O', 'viseme_U', 'browDownLeft', 'browDownRight', 'browInnerUp', 'browOuterUpLeft', 'browOuterUpRight', 'eyeSquintLeft', 'eyeSquintRight', 'eyeWideLeft', 'eyeWideRight', 'jawForward', 'jawLeft', 'jawRight', 'mouthFrownLeft', 'mouthFrownRight', 'mouthPucker', 'mouthShrugLower', 'mouthShrugUpper', 'noseSneerLeft', 'noseSneerRight', 'mouthLowerDownLeft', 'mouthLowerDownRight', 'mouthLeft', 'mouthRight', 'eyeLookDownLeft', 'eyeLookDownRight', 'eyeLookUpLeft', 'eyeLookUpRight', 'eyeLookInLeft', 'eyeLookInRight', 'eyeLookOutLeft', 'eyeLookOutRight', 'cheekPuff', 'cheekSquintLeft', 'cheekSquintRight', 'jawOpen', 'mouthClose', 'mouthFunnel', 'mouthDimpleLeft', 'mouthDimpleRight', 'mouthStretchLeft', 'mouthStretchRight', 'mouthRollLower', 'mouthRollUpper', 'mouthPressLeft', 'mouthPressRight', 'mouthUpperUpLeft', 'mouthUpperUpRight', 'mouthSmileLeft', 'mouthSmileRight', 'tongueOut', 'eyeBlinkLeft', 'eyeBlinkRight']
+ Viseme-related morph targets: (38) ['viseme_sil', 'viseme_PP', 'viseme_FF', 'viseme_TH', 'viseme_DD', 'viseme_kk', 'viseme_CH', 'viseme_SS', 'viseme_nn', 'viseme_RR', 'viseme_aa', 'viseme_E', 'viseme_I', 'viseme_O', 'viseme_U', 'mouthFrownLeft', 'mouthFrownRight', 'mouthPucker', 'mouthShrugLower', 'mouthShrugUpper', 'mouthLowerDownLeft', 'mouthLowerDownRight', 'mouthLeft', 'mouthRight', 'mouthClose', 'mouthFunnel', 'mouthDimpleLeft', 'mouthDimpleRight', 'mouthStretchLeft', 'mouthStretchRight', 'mouthRollLower', 'mouthRollUpper', 'mouthPressLeft', 'mouthPressRight', 'mouthUpperUpLeft', 'mouthUpperUpRight', 'mouthSmileLeft', 'mouthSmileRight']
+ === NEW MESSAGE EFFECT ===
+ Message received: null
+ Currently speaking: false
+ Current audio exists: false
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: HeadTop_End_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: HeadTop_End_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: HeadTop_End_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftEye_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftEye_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftEye_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightEye_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightEye_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightEye_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandThumb4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandThumb4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandThumb4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandIndex4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandIndex4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandIndex4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandMiddle4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandMiddle4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandMiddle4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandRing4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandRing4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandRing4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandPinky4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandPinky4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftHandPinky4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandThumb4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandThumb4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandThumb4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandIndex4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandIndex4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandIndex4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandMiddle4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandMiddle4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandMiddle4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandRing4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandRing4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandRing4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandPinky4_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandPinky4_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightHandPinky4_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftToe_End_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftToe_End_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: LeftToe_End_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightToe_End_end.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightToe_End_end.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: RightToe_End_end.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: Armature.position but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: Armature.quaternion but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:337 THREE.PropertyBinding: Trying to update node for track: Armature.scale but it wasn't found. Error Component Stack
+    at Avatar (Avatar.jsx:118:3)
+    at Experience (Experience.jsx:41:26)
+    at Suspense (<anonymous>)
+    at ErrorBoundary (chunk-YBHXDDDI.js?v=54960be5:16024:5)
+    at FiberProvider (chunk-YBHXDDDI.js?v=54960be5:17769:21)
+    at Provider (chunk-YBHXDDDI.js?v=54960be5:17371:3)
+overrideMethod @ hook.js:608
+bind @ chunk-KRTSOPLI.js?v=54960be5:27966
+_getValue_unbound @ chunk-KRTSOPLI.js?v=54960be5:27945
+saveOriginalState @ chunk-KRTSOPLI.js?v=54960be5:27679
+_activateAction @ chunk-KRTSOPLI.js?v=54960be5:28700
+play @ chunk-KRTSOPLI.js?v=54960be5:28315
+(anonymous) @ Avatar.jsx:337
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+chunk-YBHXDDDI.js?v=54960be5:16979 [Violation] 'requestAnimationFrame' handler took 108ms
+Avatar.jsx:135 === NEW MESSAGE EFFECT ===
+Avatar.jsx:136 Message received: null
+Avatar.jsx:137 Currently speaking: false
+Avatar.jsx:138 Current audio exists: false
+Avatar.jsx:135 === NEW MESSAGE EFFECT ===
+Avatar.jsx:136 Message received: {text: 'One!', facialExpression: 'default', animation: 'Talking_0', audio: 'UklGRiRiAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZG…AAwAAAPr/AQD9//7/BwD1////AAABAPX//f/1//b/AwD8/w==', lipsync: null}
+Avatar.jsx:137 Currently speaking: false
+Avatar.jsx:138 Current audio exists: false
+Avatar.jsx:158 Message ID: One!_Talking_0_true
+Avatar.jsx:159 Current Message ID: null
+Avatar.jsx:182 Setting animation: Talking_0
+Avatar.jsx:196 Setting facial expression: default (original: default)
+Avatar.jsx:202 Audio handling - message.audio exists: true
+Avatar.jsx:203 Audio data length: 33512
+Avatar.jsx:206 🎵 Using Piper TTS audio
+Avatar.jsx:207 🎵 Audio data length: 33512
+Avatar.jsx:211 🎵 Audio data URL prefix: data:audio/wav;base64,UklGRiRiAABXQVZFZm10IBAAAAAB
+useLipsync.jsx:21 Audio connected to lip sync manager
+Avatar.jsx:265 🎵 Attempting to play audio...
+Avatar.jsx:233 🎵 Piper audio started playing
+Avatar.jsx:234 🎵 Audio volume: 1
+Avatar.jsx:235 🎵 Audio muted: false
+Avatar.jsx:236 🎵 Audio duration: NaN
+Avatar.jsx:217 🎵 Audio load started
+Avatar.jsx:135 === NEW MESSAGE EFFECT ===
+Avatar.jsx:136 Message received: {text: 'One!', facialExpression: 'default', animation: 'Talking_0', audio: 'UklGRiRiAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZG…AAwAAAPr/AQD9//7/BwD1////AAABAPX//f/1//b/AwD8/w==', lipsync: null}
+Avatar.jsx:137 Currently speaking: true
+Avatar.jsx:138 Current audio exists: true
+Avatar.jsx:158 Message ID: One!_Talking_0_true
+Avatar.jsx:159 Current Message ID: One!_Talking_0_true
+Avatar.jsx:163 🚫 Ignoring duplicate message processing
+Avatar.jsx:225 🎵 Audio metadata loaded
+Avatar.jsx:226 🎵 Duration: 0.568889 seconds
+Avatar.jsx:223 🎵 Audio data loaded
+Avatar.jsx:219 🎵 Audio can play
+Avatar.jsx:220 🎵 Audio duration: 0.568889
+Avatar.jsx:221 🎵 Audio ready state: 4
+Avatar.jsx:271 🎵 Audio play promise resolved successfully
+Avatar.jsx:378 Active viseme: viseme_I (value: 0.53)
+Avatar.jsx:378 Active viseme: viseme_I (value: 0.56)
+Avatar.jsx:378 Active viseme: viseme_I (value: 0.58)
+Avatar.jsx:378 Active viseme: viseme_I (value: 0.59)
+Avatar.jsx:378 Active viseme: viseme_I (value: 0.59)
+Avatar.jsx:378 Active viseme: viseme_I (value: 0.58)
+Avatar.jsx:378 Active viseme: viseme_I (value: 0.56)
+Avatar.jsx:378 Active viseme: viseme_I (value: 0.52)
+Avatar.jsx:250 🎵 Piper audio paused
+Avatar.jsx:242 🎵 Piper audio ended
+Avatar.jsx:135 === NEW MESSAGE EFFECT ===
+Avatar.jsx:136 Message received: {text: 'One!', facialExpression: 'default', animation: 'Talking_0', audio: 'UklGRiRiAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZG…AAwAAAPr/AQD9//7/BwD1////AAABAPX//f/1//b/AwD8/w==', lipsync: null}
+Avatar.jsx:137 Currently speaking: false
+Avatar.jsx:138 Current audio exists: true
+Avatar.jsx:158 Message ID: One!_Talking_0_true
+Avatar.jsx:159 Current Message ID: null
+Avatar.jsx:182 Setting animation: Talking_0
+Avatar.jsx:196 Setting facial expression: default (original: default)
+Avatar.jsx:202 Audio handling - message.audio exists: true
+Avatar.jsx:203 Audio data length: 33512
+Avatar.jsx:206 🎵 Using Piper TTS audio
+Avatar.jsx:207 🎵 Audio data length: 33512
+Avatar.jsx:211 🎵 Audio data URL prefix: data:audio/wav;base64,UklGRiRiAABXQVZFZm10IBAAAAAB
+useLipsync.jsx:21 Audio connected to lip sync manager
+Avatar.jsx:265 🎵 Attempting to play audio...
+Avatar.jsx:233 🎵 Piper audio started playing
+Avatar.jsx:234 🎵 Audio volume: 1
+Avatar.jsx:235 🎵 Audio muted: false
+Avatar.jsx:236 🎵 Audio duration: NaN
+Avatar.jsx:135 === NEW MESSAGE EFFECT ===
+Avatar.jsx:136 Message received: {text: 'Two!', facialExpression: 'smile', animation: 'Talking_1', audio: 'UklGRiSaAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZG…APABAAEEANwBIAE8ATwBSAEkASgBIAFQARABdAFIATQBRADYA', lipsync: null}
+Avatar.jsx:137 Currently speaking: true
+Avatar.jsx:138 Current audio exists: true
+Avatar.jsx:158 Message ID: Two!_Talking_1_true
+Avatar.jsx:159 Current Message ID: One!_Talking_0_true
+Avatar.jsx:169 🛑 Stopping current audio to play new message
+Avatar.jsx:182 Setting animation: Talking_1
+Avatar.jsx:196 Setting facial expression: smile (original: smile)
+Avatar.jsx:202 Audio handling - message.audio exists: true
+Avatar.jsx:203 Audio data length: 52624
+Avatar.jsx:206 🎵 Using Piper TTS audio
+Avatar.jsx:207 🎵 Audio data length: 52624
+Avatar.jsx:211 🎵 Audio data URL prefix: data:audio/wav;base64,UklGRiSaAABXQVZFZm10IBAAAAAB
+useLipsync.jsx:21 Audio connected to lip sync manager
+Avatar.jsx:265 🎵 Attempting to play audio...
+Avatar.jsx:217 🎵 Audio load started
+Avatar.jsx:250 🎵 Piper audio paused
+Avatar.jsx:274 🎵 Audio play promise rejected: AbortError: The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22
+overrideMethod @ hook.js:608
+(anonymous) @ Avatar.jsx:274
+Promise.catch
+(anonymous) @ Avatar.jsx:273
+commitHookEffectListMount @ chunk-YBHXDDDI.js?v=54960be5:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js?v=54960be5:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js?v=54960be5:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js?v=54960be5:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js?v=54960be5:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js?v=54960be5:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js?v=54960be5:13921
+(anonymous) @ chunk-YBHXDDDI.js?v=54960be5:13812
+workLoop @ chunk-YBHXDDDI.js?v=54960be5:278
+flushWork @ chunk-YBHXDDDI.js?v=54960be5:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js?v=54960be5:465
+Avatar.jsx:276 🎵 Falling back to Web Speech API
+Avatar.jsx:233 🎵 Piper audio started playing
+Avatar.jsx:234 🎵 Audio volume: 1
+Avatar.jsx:235 🎵 Audio muted: false
+Avatar.jsx:236 🎵 Audio duration: NaN
+Avatar.jsx:225 🎵 Audio metadata loaded
+Avatar.jsx:226 🎵 Duration: 0.568889 seconds
+ === NEW MESSAGE EFFECT ===
+ Message received: {text: 'Two!', facialExpression: 'smile', animation: 'Talking_1', audio: 'UklGRiSaAABXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZG…APABAAEEANwBIAE8ATwBSAEkASgBIAFQARABdAFIATQBRADYA', lipsync: null}
+ Currently speaking: true
+ Current audio exists: true
+ Message ID: Two!_Talking_1_true
+ Current Message ID: Two!_Talking_1_true
+ 🚫 Ignoring duplicate message processing
+ 🎵 Audio data loaded
+ 🎵 Audio can play
+ 🎵 Audio duration: 0.568889
+ 🎵 Audio ready state: 4
+ 🎵 Audio load started
+ 🎵 Audio metadata loaded
+ 🎵 Duration: 0.893968 seconds
+ 🎵 Audio data loaded
+ 🎵 Audio can play
+ 🎵 Audio duration: 0.893968
+ 🎵 Audio ready state: 4
+ 🎵 Audio play promise resolved successfully
+ 🎵 Piper audio paused
+ 🎵 Piper audio ended
+ === NEW MESSAGE EFFECT ===
+ Message received: {text: 'Three! Four! Five!', facialExpression: 'surprised', animation: 'Talking_2', audio: 'UklGRiRgAQBXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZG…AJAAlACUAHQAqACcAJAAsACQAJQAjACkAHgAtACUAJAAsAB0A', lipsync: null}
+ Currently speaking: false
+ Current audio exists: true
+ Message ID: Three! Four! Five!_Talking_2_true
+ Current Message ID: null
+ Setting animation: Talking_2
+ Setting facial expression: surprised (original: surprised)
+ Audio handling - message.audio exists: true
+ Audio data length: 120208
+ 🎵 Using Piper TTS audio
+ 🎵 Audio data length: 120208
+ 🎵 Audio data URL prefix: data:audio/wav;base64,UklGRiRgAQBXQVZFZm10IBAAAAAB
+ Audio connected to lip sync manager
+ 🎵 Attempting to play audio...
+ 🎵 Piper audio started playing
+ 🎵 Audio volume: 1
+ 🎵 Audio muted: false
+ 🎵 Audio duration: NaN
+ 🎵 Audio load started
+ === NEW MESSAGE EFFECT ===
+ Message received: {text: 'Three! Four! Five!', facialExpression: 'surprised', animation: 'Talking_2', audio: 'UklGRiRgAQBXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZG…AJAAlACUAHQAqACcAJAAsACQAJQAjACkAHgAtACUAJAAsAB0A', lipsync: null}
+ Currently speaking: true
+ Current audio exists: true
+ Message ID: Three! Four! Five!_Talking_2_true
+ Current Message ID: Three! Four! Five!_Talking_2_true
+ 🚫 Ignoring duplicate message processing
+ 🎵 Audio metadata loaded
+ 🎵 Duration: 2.043356 seconds
+ 🎵 Audio data loaded
+ 🎵 Audio can play
+ 🎵 Audio duration: 2.043356
+ 🎵 Audio ready state: 4
+ 🎵 Audio play promise resolved successfully
+ Active viseme: viseme_I (value: 0.53)
+ Active viseme: viseme_I (value: 0.57)
+ Active viseme: viseme_I (value: 0.58)
+ Active viseme: viseme_I (value: 0.59)
+ Active viseme: viseme_I (value: 0.59)
+ Active viseme: viseme_PP (value: 0.50)
+ Active viseme: viseme_I (value: 0.57)
+ Active viseme: viseme_PP (value: 0.52)
+ Active viseme: viseme_I (value: 0.55)
+ Active viseme: viseme_PP (value: 0.53)
+ Active viseme: viseme_I (value: 0.52)
+ Active viseme: viseme_PP (value: 0.53)
+ Active viseme: viseme_PP (value: 0.53)
+ Active viseme: viseme_PP (value: 0.52)
+ Active viseme: viseme_aa (value: 0.51)
+ Active viseme: viseme_aa (value: 0.53)
+ Active viseme: viseme_aa (value: 0.54)
+ Active viseme: viseme_PP (value: 0.53)
+ Active viseme: viseme_aa (value: 0.54)
+ Active viseme: viseme_PP (value: 0.56)
+ Active viseme: viseme_aa (value: 0.54)
+ Active viseme: viseme_PP (value: 0.58)
+ Active viseme: viseme_aa (value: 0.54)
+ Active viseme: viseme_PP (value: 0.59)
+ Active viseme: viseme_aa (value: 0.53)
+ Active viseme: viseme_PP (value: 0.59)
+ Active viseme: viseme_aa (value: 0.51)
+ Active viseme: viseme_PP (value: 0.59)
+ Active viseme: viseme_PP (value: 0.58)
+ Active viseme: viseme_PP (value: 0.55)
+ Active viseme: viseme_PP (value: 0.53)
+ Active viseme: viseme_I (value: 0.50)
+ Active viseme: viseme_I (value: 0.54)
+ Active viseme: viseme_aa (value: 0.51)
+ Active viseme: viseme_I (value: 0.57)
+ Active viseme: viseme_aa (value: 0.53)
+ Active viseme: viseme_I (value: 0.59)
+ Active viseme: viseme_aa (value: 0.54)
+ Active viseme: viseme_I (value: 0.59)
+ Active viseme: viseme_aa (value: 0.55)
+ Active viseme: viseme_I (value: 0.59)
+ Active viseme: viseme_aa (value: 0.56)
+ Active viseme: viseme_I (value: 0.57)
+ Active viseme: viseme_aa (value: 0.56)
+ Active viseme: viseme_I (value: 0.54)
+ Active viseme: viseme_aa (value: 0.55)
+ Active viseme: viseme_I (value: 0.51)
+ Active viseme: viseme_aa (value: 0.54)
+ Active viseme: viseme_aa (value: 0.53)
+ Active viseme: viseme_aa (value: 0.51)
+ 🎵 Piper audio paused
+ 🎵 Piper audio ended
+ === NEW MESSAGE EFFECT ===
+ Message received: {text: 'Three! Four! Five!', facialExpression: 'surprised', animation: 'Talking_2', audio: 'UklGRiRgAQBXQVZFZm10IBAAAAABAAEAIlYAAESsAAACABAAZG…AJAAlACUAHQAqACcAJAAsACQAJQAjACkAHgAtACUAJAAsAB0A', lipsync: null}
+ Currently speaking: false
+ Current audio exists: true
+ Message ID: Three! Four! Five!_Talking_2_true
+ Current Message ID: null
+ Setting animation: Talking_2
+ Setting facial expression: surprised (original: surprised)
+ Audio handling - message.audio exists: true
+ Audio data length: 120208
+ 🎵 Using Piper TTS audio
+ 🎵 Audio data length: 120208
+ 🎵 Audio data URL prefix: data:audio/wav;base64,UklGRiRgAQBXQVZFZm10IBAAAAAB
+ Audio connected to lip sync manager
+ 🎵 Attempting to play audio...
+ 🎵 Piper audio started playing
+ 🎵 Audio volume: 1
+ 🎵 Audio muted: false
+ 🎵 Audio duration: NaN
+ === NEW MESSAGE EFFECT ===
+ Message received: null
+ Currently speaking: true
+ Current audio exists: true
+ Stopping audio - no message
+ 🎵 Audio load started
+ 🎵 Piper audio paused
+ 🎵 Audio play promise rejected: 
+overrideMethod @ installHook.js:1
+(anonymous) @ Avatar.jsx:249
+Promise.catch
+(anonymous) @ Avatar.jsx:248
+commitHookEffectListMount @ chunk-YBHXDDDI.js:10923
+commitPassiveMountOnFiber @ chunk-YBHXDDDI.js:12238
+commitPassiveMountEffects_complete @ chunk-YBHXDDDI.js:12210
+commitPassiveMountEffects_begin @ chunk-YBHXDDDI.js:12200
+commitPassiveMountEffects @ chunk-YBHXDDDI.js:12190
+flushPassiveEffectsImpl @ chunk-YBHXDDDI.js:13958
+flushPassiveEffects @ chunk-YBHXDDDI.js:13921
+(anonymous) @ chunk-YBHXDDDI.js:13812
+workLoop @ chunk-YBHXDDDI.js:278
+flushWork @ chunk-YBHXDDDI.js:257
+performWorkUntilDeadline @ chunk-YBHXDDDI.js:465
+ 🎵 Falling back to Web Speech API
+webSpeechTTS.js:63 Speech error: canceled
+overrideMethod @ hook.js:608
+utterance.onerror @ webSpeechTTS.js:63
+Avatar.jsx:289 🗣️ TTS Error (fallback): SpeechSynthesisErrorEvent {isTrusted: true, error: 'canceled', utterance: SpeechSynthesisUtterance, charIndex: 0, charLength: 0, …}
+overrideMethod @ hook.js:608
+onError @ Avatar.jsx:289
+utterance.onerror @ webSpeechTTS.js:65
+ === NEW MESSAGE EFFECT ===
+ Message received: null
+ Currently speaking: false
+ Current audio exists: true
+ Stopping audio - no message
+ 🎵 Audio metadata loaded
+ 🎵 Duration: 2.043356 seconds
+ 🎵 Audio data loaded
+ 🎵 Audio can play
+ 🎵 Audio duration: 2.043356
+ 🎵 Audio ready state: 1
+webSpeechTTS.js:64 Uncaught (in promise) Error: Speech synthesis error: canceled
+    at utterance.onerror (webSpeechTTS.js:64:16)
+utterance.onerror @ webSpeechTTS.js:64
+webSpeechTTS.js:63 Speech error: canceled
+overrideMethod @ hook.js:608
+utterance.onerror @ webSpeechTTS.js:63
+Avatar.jsx:289 🗣️ TTS Error (fallback): SpeechSynthesisErrorEvent {isTrusted: true, error: 'canceled', utterance: SpeechSynthesisUtterance, charIndex: 0, charLength: 0, …}
+overrideMethod @ hook.js:608
+onError @ Avatar.jsx:289
+utterance.onerror @ webSpeechTTS.js:65
+ === NEW MESSAGE EFFECT ===
+ Message received: null
+ Currently speaking: false
+ Current audio exists: true
+ Stopping audio - no message
+ 🎵 Audio can play
+ 🎵 Audio duration: 2.043356
+ 🎵 Audio ready state: 1
+webSpeechTTS.js:64 Uncaught (in promise) Error: Speech synthesis error: canceled
+    at utterance.onerror (webSpeechTTS.js:64:16)
+utterance.onerror @ webSpeechTTS.js:64
+ === NEW MESSAGE EFFECT ===
+ Message received: null
+ Currently speaking: false
+ Current audio exists: true
+ Stopping audio - no message
+ 🎵 Audio can play
+ 🎵 Audio duration: 2.043356
+ 🎵 Audio ready state: 1
+ 🎵 Audio can play
+ 🎵 Audio duration: 2.043356
+ 🎵 Audio ready state: 4

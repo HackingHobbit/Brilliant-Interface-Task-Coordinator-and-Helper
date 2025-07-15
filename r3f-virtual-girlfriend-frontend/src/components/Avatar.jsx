@@ -9,7 +9,10 @@ import { button, useControls } from "leva";
 import React, { useEffect, useRef, useState } from "react";
 
 import * as THREE from "three";
+import { VISEMES } from "wawa-lipsync";
 import { useChat } from "../hooks/useChat";
+import { useLipsync } from "../hooks/useLipsync";
+import { webSpeechTTS } from "../utils/webSpeechTTS";
 
 const facialExpressions = {
   default: {},
@@ -96,7 +99,7 @@ const corresponding = {
   A: "viseme_PP",
   B: "viseme_kk",
   C: "viseme_I",
-  D: "viseme_AA",
+  D: "viseme_aa",  // Fixed: lowercase 'aa' instead of 'AA'
   E: "viseme_O",
   F: "viseme_U",
   G: "viseme_FF",
@@ -111,24 +114,214 @@ export function Avatar(props) {
     "/models/64f1a714fe61576b46f27ca2.glb"
   );
 
+  // Debug: Log available morph targets once
+  useEffect(() => {
+    if (nodes.EyeLeft?.morphTargetDictionary) {
+      console.log("Available morph targets:", Object.keys(nodes.EyeLeft.morphTargetDictionary));
+      console.log("Viseme-related morph targets:",
+        Object.keys(nodes.EyeLeft.morphTargetDictionary).filter(key =>
+          key.toLowerCase().includes('viseme') || key.toLowerCase().includes('mouth')
+        )
+      );
+    }
+  }, [nodes]);
+
   const { message, onMessagePlayed, chat } = useChat();
+  const { connectAudio, startAnalysis, stopAnalysis, currentViseme } = useLipsync();
 
   const [lipsync, setLipsync] = useState();
 
   useEffect(() => {
-    console.log(message);
+    console.log("=== NEW MESSAGE EFFECT ===");
+    console.log("Message received:", message);
+    console.log("Currently speaking:", isSpeaking);
+    console.log("Current audio exists:", !!audio);
+
     if (!message) {
+      // Only stop audio when there's no message
+      if (audio) {
+        console.log("Stopping audio - no message");
+        audio.pause();
+        audio.currentTime = 0;
+      }
+      webSpeechTTS.stop();
       setAnimation("Idle");
+      setFacialExpression("default");
+      stopAnalysis();
+      setIsSpeaking(false);
+      setCurrentMessageId(null);
       return;
     }
-    setAnimation(message.animation);
-    setFacialExpression(message.facialExpression);
+
+    // Create a unique ID for this message to prevent duplicate processing
+    const messageId = `${message.text.substring(0, 50)}_${message.animation}_${!!message.audio}`;
+    console.log("Message ID:", messageId);
+    console.log("Current Message ID:", currentMessageId);
+
+    // If this is the same message we're already processing, ignore it
+    if (currentMessageId === messageId) {
+      console.log("🚫 Ignoring duplicate message processing");
+      return;
+    }
+
+    // If we're already speaking, stop the current audio first
+    if (isSpeaking && audio && !audio.paused) {
+      console.log("🛑 Stopping current audio to play new message");
+      audio.pause();
+      audio.currentTime = 0;
+      webSpeechTTS.stop();
+      stopAnalysis();
+      setIsSpeaking(false);
+    }
+
+    setCurrentMessageId(messageId);
+
+    // Set animation (fallback to Talking_0 if invalid)
+    const validAnimations = ["Talking_0", "Talking_1", "Talking_2", "Crying", "Laughing", "Rumba", "Idle", "Terrified", "Angry"];
+    const animation = validAnimations.includes(message.animation) ? message.animation : "Talking_0";
+    console.log("Setting animation:", animation);
+    setAnimation(animation);
+
+    // Handle special case for winking
+    if (message.facialExpression === "wink") {
+      console.log("Winking!");
+      setFacialExpression("smile"); // Use smile as base expression
+      // Trigger a wink
+      setWinkLeft(true);
+      setTimeout(() => setWinkLeft(false), 300);
+    } else {
+      // Set facial expression (fallback to default if invalid)
+      const validExpressions = ["default", "smile", "sad", "angry", "surprised", "funnyFace", "crazy"];
+      const expression = validExpressions.includes(message.facialExpression) ? message.facialExpression : "default";
+      console.log("Setting facial expression:", expression, "(original:", message.facialExpression + ")");
+      setFacialExpression(expression);
+    }
+
     setLipsync(message.lipsync);
-    const audio = new Audio("data:audio/mp3;base64," + message.audio);
-    audio.play();
-    setAudio(audio);
-    audio.onended = onMessagePlayed;
-  }, [message]);
+
+    console.log('Audio handling - message.audio exists:', !!message.audio);
+    console.log('Audio data length:', message.audio ? message.audio.length : 0);
+
+    if (message.audio && message.audio.length > 0) {
+      console.log('🎵 Using Piper TTS audio');
+      console.log('🎵 Audio data length:', message.audio.length);
+
+      // Test if the base64 data looks valid
+      const audioDataUrl = "data:audio/wav;base64," + message.audio;
+      console.log('🎵 Audio data URL prefix:', audioDataUrl.substring(0, 50));
+
+      // Create audio element and connect to lip sync
+      const newAudio = new Audio(audioDataUrl);
+
+      // Add more detailed debugging
+      newAudio.onloadstart = () => console.log('🎵 Audio load started');
+      newAudio.oncanplay = () => {
+        console.log('🎵 Audio can play');
+        console.log('🎵 Audio duration:', newAudio.duration);
+        console.log('🎵 Audio ready state:', newAudio.readyState);
+      };
+      newAudio.onloadeddata = () => console.log('🎵 Audio data loaded');
+      newAudio.onloadedmetadata = () => {
+        console.log('🎵 Audio metadata loaded');
+        console.log('🎵 Duration:', newAudio.duration, 'seconds');
+      };
+
+      // Connect audio to lip sync manager
+      connectAudio(newAudio);
+
+      newAudio.onplay = () => {
+        console.log('🎵 Piper audio started playing');
+        console.log('🎵 Audio volume:', newAudio.volume);
+        console.log('🎵 Audio muted:', newAudio.muted);
+        console.log('🎵 Audio duration:', newAudio.duration);
+        startAnalysis();
+        setIsSpeaking(true);
+      };
+
+      newAudio.onended = () => {
+        console.log('🎵 Piper audio ended');
+        stopAnalysis();
+        setIsSpeaking(false);
+        setCurrentMessageId(null);
+        onMessagePlayed();
+      };
+
+      newAudio.onpause = () => {
+        console.log('🎵 Piper audio paused');
+        stopAnalysis();
+        setIsSpeaking(false);
+      };
+
+      newAudio.onerror = (error) => {
+        console.error('🎵 Piper audio error:', error);
+        console.error('🎵 Audio error details:', newAudio.error);
+        stopAnalysis();
+        setIsSpeaking(false);
+        setCurrentMessageId(null);
+        onMessagePlayed();
+      };
+
+      // Try to play with more debugging
+      console.log('🎵 Attempting to play audio...');
+      const playPromise = newAudio.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log('🎵 Audio play promise resolved successfully');
+          })
+          .catch(error => {
+            console.error('🎵 Audio play promise rejected:', error);
+            // Fallback to Web Speech API
+            console.log('🎵 Falling back to Web Speech API');
+            webSpeechTTS.speak(message.text, {
+              onStart: () => {
+                console.log('🗣️ Web Speech TTS started (fallback)');
+                setIsSpeaking(true);
+              },
+              onEnd: () => {
+                console.log('🗣️ Web Speech TTS ended (fallback)');
+                setIsSpeaking(false);
+                setCurrentMessageId(null);
+                onMessagePlayed();
+              },
+              onError: (error) => {
+                console.error('🗣️ TTS Error (fallback):', error);
+                setIsSpeaking(false);
+                setCurrentMessageId(null);
+                onMessagePlayed();
+              }
+            });
+          });
+      }
+
+      setAudio(newAudio);
+    } else {
+      console.log('🗣️ Using Web Speech API fallback');
+      // Use Web Speech API as fallback (without real-time lip sync for now)
+      setAudio(null);
+
+      // Use Web Speech API for speech synthesis
+      webSpeechTTS.speak(message.text, {
+        onStart: () => {
+          console.log('🗣️ Web Speech TTS started');
+          setIsSpeaking(true);
+        },
+        onEnd: () => {
+          console.log('🗣️ Web Speech TTS ended');
+          setIsSpeaking(false);
+          setCurrentMessageId(null);
+          onMessagePlayed();
+        },
+        onError: (error) => {
+          console.error('🗣️ TTS Error:', error);
+          setIsSpeaking(false);
+          setCurrentMessageId(null);
+          onMessagePlayed();
+        }
+      });
+    }
+  }, [message, connectAudio, startAnalysis, stopAnalysis, onMessagePlayed]);
 
   const { animations } = useGLTF("/models/animations.glb");
 
@@ -146,6 +339,8 @@ export function Avatar(props) {
   }, [animation]);
 
   const lerpMorphTarget = (target, value, speed = 0.1) => {
+    let targetFound = false;
+
     scene.traverse((child) => {
       if (child.isSkinnedMesh && child.morphTargetDictionary) {
         const index = child.morphTargetDictionary[target];
@@ -155,6 +350,8 @@ export function Avatar(props) {
         ) {
           return;
         }
+
+        targetFound = true;
         child.morphTargetInfluences[index] = THREE.MathUtils.lerp(
           child.morphTargetInfluences[index],
           value,
@@ -170,6 +367,16 @@ export function Avatar(props) {
         }
       }
     });
+
+    // Debug: Log when a viseme morph target is not found
+    if (!targetFound && target.toLowerCase().includes('viseme')) {
+      console.warn(`Morph target not found in any mesh: ${target}`);
+    }
+
+    // Debug: Log when a viseme morph target is activated
+    if (targetFound && target.toLowerCase().includes('viseme') && value > 0.5) {
+      console.log(`Active viseme: ${target} (value: ${value.toFixed(2)})`);
+    }
   };
 
   const [blink, setBlink] = useState(false);
@@ -177,51 +384,73 @@ export function Avatar(props) {
   const [winkRight, setWinkRight] = useState(false);
   const [facialExpression, setFacialExpression] = useState("");
   const [audio, setAudio] = useState();
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [currentMessageId, setCurrentMessageId] = useState(null);
 
   useFrame(() => {
-    !setupMode &&
-      Object.keys(nodes.EyeLeft.morphTargetDictionary).forEach((key) => {
-        const mapping = facialExpressions[facialExpression];
-        if (key === "eyeBlinkLeft" || key === "eyeBlinkRight") {
-          return; // eyes wink/blink are handled separately
-        }
-        if (mapping && mapping[key]) {
-          lerpMorphTarget(key, mapping[key], 0.1);
-        } else {
-          lerpMorphTarget(key, 0, 0.1);
-        }
-      });
+    if (setupMode) return;
 
+    // Debug current viseme state
+    if (isSpeaking && currentViseme) {
+      console.log(`🔍 Debug - isSpeaking: ${isSpeaking}, currentViseme: ${currentViseme}`);
+    }
+
+    // Handle facial expressions
+    Object.keys(nodes.EyeLeft.morphTargetDictionary).forEach((key) => {
+      // Skip eye blink which is handled separately
+      if (key === "eyeBlinkLeft" || key === "eyeBlinkRight") {
+        return;
+      }
+
+      // Get the mapping for the current facial expression
+      const mapping = facialExpressions[facialExpression] || facialExpressions["default"];
+
+      if (mapping && mapping[key]) {
+        lerpMorphTarget(key, mapping[key], 0.1);
+      } else {
+        lerpMorphTarget(key, 0, 0.1);
+      }
+    });
+
+    // Handle eye blinking
     lerpMorphTarget("eyeBlinkLeft", blink || winkLeft ? 1 : 0, 0.5);
     lerpMorphTarget("eyeBlinkRight", blink || winkRight ? 1 : 0, 0.5);
 
-    // LIPSYNC
-    if (setupMode) {
-      return;
-    }
+    // REAL-TIME LIPSYNC with wawa-lipsync (when audio is available)
+    // For Web Speech API, we'll use a simple talking animation instead
+    if (currentViseme && currentViseme !== "viseme_sil") {
+      console.log(`🎯 Applying viseme: ${currentViseme}`);
+      lerpMorphTarget(currentViseme, 1, 0.2);
 
-    const appliedMorphTargets = [];
-    if (message && lipsync) {
-      const currentAudioTime = audio.currentTime;
-      for (let i = 0; i < lipsync.mouthCues.length; i++) {
-        const mouthCue = lipsync.mouthCues[i];
-        if (
-          currentAudioTime >= mouthCue.start &&
-          currentAudioTime <= mouthCue.end
-        ) {
-          appliedMorphTargets.push(corresponding[mouthCue.value]);
-          lerpMorphTarget(corresponding[mouthCue.value], 1, 0.2);
-          break;
+      // Reset all other visemes using VISEMES from wawa-lipsync
+      Object.values(VISEMES).forEach((value) => {
+        if (value !== currentViseme) {
+          lerpMorphTarget(value, 0, 0.1);
         }
-      }
-    }
+      });
+    } else if (isSpeaking) {
+      // Simple talking animation for Web Speech API (when no real-time lip sync)
+      // Animate between different mouth shapes during speech
+      const time = Date.now() * 0.01;
+      const talkingIntensity = Math.sin(time) * 0.3 + 0.3; // Oscillate between 0 and 0.6
 
-    Object.values(corresponding).forEach((value) => {
-      if (appliedMorphTargets.includes(value)) {
-        return;
-      }
-      lerpMorphTarget(value, 0, 0.1);
-    });
+      // Use a mix of visemes for natural talking motion
+      lerpMorphTarget(VISEMES.PP, Math.sin(time * 1.2) * talkingIntensity, 0.1);
+      lerpMorphTarget(VISEMES.aa, Math.sin(time * 0.8 + 1) * talkingIntensity, 0.1);
+      lerpMorphTarget(VISEMES.I, Math.sin(time * 1.5 + 2) * talkingIntensity, 0.1);
+
+      // Reset other visemes using VISEMES constant
+      Object.values(VISEMES).forEach(viseme => {
+        if (viseme !== VISEMES.PP && viseme !== VISEMES.aa && viseme !== VISEMES.I) {
+          lerpMorphTarget(viseme, 0, 0.1);
+        }
+      });
+    } else {
+      // Reset all visemes when not speaking using VISEMES from wawa-lipsync
+      Object.values(VISEMES).forEach((value) => {
+        lerpMorphTarget(value, 0, 0.1);
+      });
+    }
   });
 
   useControls("FacialExpressions", {
