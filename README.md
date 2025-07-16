@@ -221,100 +221,17 @@ The roadmap follows a **"Smart First, Customizable Second, Advanced Third"** app
   - Screen reader support and compliance
   - Keyboard navigation and visual indicators
 
-## 📡 **Backend API Documentation**
+## 📡 **API Documentation**
 
-The backend server provides several RESTful API endpoints for frontend communication and system management.
+For detailed backend API documentation including endpoints, request/response formats, error handling, and integration notes, see:
 
-### **Base URL**
-```
-http://localhost:3000
-```
+**[📖 Backend API Documentation](docs/api/BACKEND_API.md)**
 
-### **Endpoints**
-
-#### **GET /**
-Basic health check endpoint.
-- **Response**: `"Hello World!"`
-
-#### **GET /health**
-Comprehensive system health status.
-- **Response**:
-```json
-{
-  "status": "healthy",
-  "timestamp": "2025-07-16T05:35:03.071Z",
-  "services": {
-    "backend": "running",
-    "lmStudio": "http://localhost:1234",
-    "piperTTS": "local"
-  }
-}
-```
-
-#### **GET /voices**
-Available TTS voice models.
-- **Response**:
-```json
-[
-  {
-    "voice_id": "en_GB-alba-medium",
-    "name": "Alba (British English)",
-    "category": "local_tts"
-  }
-]
-```
-
-#### **POST /chat**
-Main conversation endpoint with session memory support.
-- **Request Body**:
-```json
-{
-  "message": "Hello, how are you?",
-  "sessionId": "session_1752643558132_86w5zc00v"
-}
-```
-- **Response**:
-```json
-{
-  "messages": [
-    {
-      "text": "Hello! I am doing well, thank you for asking.",
-      "facialExpression": "smile",
-      "animation": "Talking_1",
-      "audio": "base64_encoded_audio_data",
-      "lipsync": null
-    }
-  ]
-}
-```
-
-#### **POST /clear-session**
-Clear conversation memory for a specific session.
-- **Request Body**:
-```json
-{
-  "sessionId": "session_1752643558132_86w5zc00v"
-}
-```
-- **Response**:
-```json
-{
-  "success": true,
-  "message": "Session cleared successfully"
-}
-```
-
-### **Error Handling**
-All endpoints include comprehensive error handling:
-- **500 Internal Server Error**: Server-side errors with descriptive messages
-- **400 Bad Request**: Missing required parameters
-- **JSON Error Responses**: Structured error information for debugging
-
-### **Session Management**
-- **Session IDs**: Unique identifiers for conversation continuity
-- **Memory Limit**: 20 exchanges (40 messages) per session
-- **Auto-Cleanup**: Sessions expire after 30 minutes of inactivity
-- **Persistence**: Frontend manages session ID persistence via localStorage
+### **Quick Reference**
+- **Base URL**: `http://localhost:3000`
+- **Main Endpoints**: `/health`, `/chat`, `/clear-session`, `/voices`
+- **Session Memory**: 20 exchanges per session, 30-minute auto-cleanup
+- **Authentication**: None required (local development)
 
 ## 🤝 **Contributing**
 
