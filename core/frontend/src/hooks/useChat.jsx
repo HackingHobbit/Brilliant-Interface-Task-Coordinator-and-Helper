@@ -11,6 +11,18 @@ export const ChatProvider = ({ children }) => {
   const [cameraZoomed, setCameraZoomed] = useState(true);
   const [backendStatus, setBackendStatus] = useState('unknown'); // 'healthy', 'down', 'checking', 'unknown'
 
+  // Generate a unique session ID for this browser session
+  const [sessionId] = useState(() => {
+    // Try to get existing session ID from localStorage, or create new one
+    let id = localStorage.getItem('brilliant-interface-session-id');
+    if (!id) {
+      id = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('brilliant-interface-session-id', id);
+    }
+    console.log('🆔 Using session ID:', id);
+    return id;
+  });
+
   // Function to check if backend is running
   const checkBackendHealth = async () => {
     try {
@@ -76,7 +88,10 @@ The backend needs to be running on port 3000 for the AI to respond.
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({
+          message,
+          sessionId
+        }),
       });
 
       if (!data.ok) {
@@ -95,6 +110,46 @@ The backend needs to be running on port 3000 for the AI to respond.
   };
   const onMessagePlayed = () => {
     setMessages((messages) => messages.slice(1));
+  };
+
+  // Function to clear conversation memory
+  const clearMemory = async () => {
+    console.log('🧹 Starting memory clear process...');
+
+    // Get current session ID from localStorage
+    const currentSessionId = localStorage.getItem('brilliant-interface-session-id');
+
+    try {
+      // First, clear the backend session
+      console.log('🧹 Clearing backend session:', currentSessionId);
+      const response = await fetch(`${backendUrl}/clear-session`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ sessionId: currentSessionId }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('✅ Backend session cleared:', result.message);
+      } else {
+        console.warn('⚠️ Failed to clear backend session, but continuing...');
+      }
+    } catch (error) {
+      console.warn('⚠️ Error clearing backend session:', error.message);
+    }
+
+    // Clear frontend message history
+    setMessages([]);
+    setMessage(null);
+
+    // Generate new session ID to start fresh conversation
+    const newSessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('brilliant-interface-session-id', newSessionId);
+
+    console.log('🧹 Frontend cleared, new session ID:', newSessionId);
+    console.log('✅ Memory clear process complete!');
   };
 
   // Check backend health on component mount
@@ -124,6 +179,8 @@ The backend needs to be running on port 3000 for the AI to respond.
         setCameraZoomed,
         backendStatus,
         checkBackendHealth,
+        clearMemory,
+        sessionId,
       }}
     >
       {children}

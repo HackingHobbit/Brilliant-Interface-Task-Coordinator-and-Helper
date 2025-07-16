@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useChat } from '../hooks/useChat';
 
 export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeChange }) => {
   const [activeTab, setActiveTab] = useState('appearance');
+  const { clearMemory } = useChat();
   const [settings, setSettings] = useState({
     // Appearance & UI
     theme: 'futuristic',
@@ -531,6 +533,29 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
                   }`}>
                     Enable AI Memory (Conversation + Facts)
                   </label>
+                </div>
+
+                {/* Clear Memory Button */}
+                <div className="mt-4">
+                  <button
+                    onClick={() => {
+                      if (confirm('Are you sure you want to clear all conversation memory? This cannot be undone.')) {
+                        clearMemory();
+                      }
+                    }}
+                    className={`w-full p-3 rounded font-medium transition-all ${
+                      theme === 'futuristic'
+                        ? 'bg-red-900/30 border border-red-500/50 text-red-300 hover:bg-red-900/50 hover:border-red-400 hover:text-red-200'
+                        : 'bg-red-100 border border-red-300 text-red-700 hover:bg-red-200'
+                    }`}
+                  >
+                    🧹 Clear Session Memory
+                  </button>
+                  <p className={`text-xs mt-2 ${
+                    theme === 'futuristic' ? 'text-gray-400' : 'text-gray-500'
+                  }`}>
+                    Clears all conversation history and starts a fresh session
+                  </p>
                 </div>
               </div>
             </div>

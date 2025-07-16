@@ -24,6 +24,25 @@ app.use(express.json());
 app.use(cors());
 const port = 3000;
 
+// In-memory session storage for conversation history
+// In production, you'd want to use Redis, database, or persistent storage
+const conversationSessions = new Map();
+
+// Session configuration
+const MAX_CONVERSATION_HISTORY = 20; // Keep last 20 exchanges (40 messages total)
+const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
+
+// Clean up old sessions periodically
+setInterval(() => {
+  const now = Date.now();
+  for (const [sessionId, session] of conversationSessions.entries()) {
+    if (now - session.lastActivity > SESSION_TIMEOUT) {
+      conversationSessions.delete(sessionId);
+      console.log(`🗑️ Cleaned up expired session: ${sessionId}`);
+    }
+  }
+}, 5 * 60 * 1000); // Check every 5 minutes
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
@@ -39,6 +58,32 @@ app.get("/health", (req, res) => {
       piperTTS: "local"
     }
   });
+});
+
+// Clear session memory endpoint
+app.post('/clear-session', (req, res) => {
+  try {
+    const sessionId = req.body.sessionId;
+
+    if (!sessionId) {
+      return res.status(400).json({ error: 'Session ID is required' });
+    }
+
+    if (conversationSessions.has(sessionId)) {
+      conversationSessions.delete(sessionId);
+      console.log(`🧹 Manually cleared session: ${sessionId}`);
+      res.json({ success: true, message: 'Session cleared successfully' });
+    } else {
+      console.log(`⚠️ Attempted to clear non-existent session: ${sessionId}`);
+      res.json({ success: true, message: 'Session was already clear' });
+    }
+  } catch (error) {
+    console.error('❌ Error in clear-session endpoint:', error);
+    res.status(500).json({
+      error: 'Internal server error',
+      message: 'Failed to clear session. Please try again.'
+    });
+  }
 });
 
 app.get("/voices", async (req, res) => {
@@ -59,43 +104,59 @@ const execCommand = (command) => {
   });
 };
 
-// Lip sync is now handled in real-time by wawa-lipsync on the frontend
-// No need for pre-processing with Rhubarb
-
-app.post("/chat", async (req, res) => {
-  const userMessage = req.body.message;
-  if (!userMessage) {
-    res.send({
-      messages: [
-        {
-          text: "Hey dear... How was your day?",
-          audio: await audioFileToBase64("audios/intro_0.wav"),
-          lipsync: await readJsonTranscript("audios/intro_0.json"),
-          facialExpression: "smile",
-          animation: "Talking_1",
-        },
-        {
-          text: "I missed you so much... Please don't go for so long!",
-          audio: await audioFileToBase64("audios/intro_1.wav"),
-          lipsync: await readJsonTranscript("audios/intro_1.json"),
-          facialExpression: "sad",
-          animation: "Crying",
-        },
-      ],
+// Session management functions
+function getOrCreateSession(sessionId) {
+  if (!conversationSessions.has(sessionId)) {
+    conversationSessions.set(sessionId, {
+      messages: [],
+      lastActivity: Date.now(),
+      createdAt: Date.now()
     });
-    return;
+    console.log(`🆕 Created new session: ${sessionId}`);
   }
-  // No API keys needed for local setup!
-  console.log("Using fully local setup: LM Studio + Piper TTS + wawa-lipsync");
 
-  const completion = await openai.chat.completions.create({
-    model: LM_STUDIO_MODEL,
-    max_tokens: 2000, // Increased to allow for complete JSON responses
-    temperature: 0.6,
-    messages: [
-      {
-        role: "system",
-        content: `You are a virtual girlfriend. You MUST respond with ONLY valid JSON.
+  const session = conversationSessions.get(sessionId);
+  session.lastActivity = Date.now();
+  return session;
+}
+
+function addToConversationHistory(sessionId, userMessage, assistantResponse) {
+  const session = getOrCreateSession(sessionId);
+
+  // Add user message
+  session.messages.push({
+    role: "user",
+    content: userMessage
+  });
+
+  // Add assistant response (convert from our JSON format to simple text)
+  const responseText = Array.isArray(assistantResponse)
+    ? assistantResponse.map(msg => msg.text).join(' ')
+    : assistantResponse;
+
+  session.messages.push({
+    role: "assistant",
+    content: responseText
+  });
+
+  // Keep only the last MAX_CONVERSATION_HISTORY exchanges
+  if (session.messages.length > MAX_CONVERSATION_HISTORY * 2) {
+    session.messages = session.messages.slice(-MAX_CONVERSATION_HISTORY * 2);
+  }
+
+  console.log(`💾 Session ${sessionId} now has ${session.messages.length} messages`);
+}
+
+function buildMessagesArray(sessionId, currentUserMessage) {
+  const session = getOrCreateSession(sessionId);
+
+  const systemPrompt = {
+    role: "system",
+    content: `You are the Brilliant Interface Task Coordinator and Helper (B.I.T.C.H.). Your name is "Brilliant Interface Task Coordinator and Helper", but you can call me your bitch as a casual nickname. You are an AI assistant with a helpful, friendly personality.
+
+IMPORTANT: When introducing yourself, when asked about your name, or when starting a new conversation, ALWAYS mention both your full name AND the casual nickname option: "I am the Brilliant Interface Task Coordinator and Helper, but you can call me your bitch." This should be included in your first response to any new user or when they seem to not know who you are.
+
+You MUST respond with ONLY valid JSON.
 
 CRITICAL RULES:
 1. Your ENTIRE response must be a JSON array - nothing else
@@ -116,13 +177,63 @@ WRONG (DO NOT DO THIS):
 RIGHT (DO THIS):
 [{"text": "Hello!", "facialExpression": "smile", "animation": "Talking_1"}]
 
-Maximum 3 messages. Respond with JSON only.`,
-      },
-      {
-        role: "user",
-        content: userMessage || "Hello",
-      },
-    ],
+Maximum 3 messages. Respond with JSON only.`
+  };
+
+  // Build the complete messages array: system + conversation history + current message
+  const messages = [
+    systemPrompt,
+    ...session.messages,
+    {
+      role: "user",
+      content: currentUserMessage
+    }
+  ];
+
+  console.log(`🧠 Building context with ${session.messages.length} historical messages`);
+  return messages;
+}
+
+// Lip sync is now handled in real-time by wawa-lipsync on the frontend
+// No need for pre-processing with Rhubarb
+
+app.post("/chat", async (req, res) => {
+  try {
+    const userMessage = req.body.message;
+    const sessionId = req.body.sessionId || 'default'; // Use provided sessionId or default
+
+    if (!userMessage) {
+    res.send({
+      messages: [
+        {
+          text: "Hello! I am the Brilliant Interface Task Coordinator and Helper, but you can call me your bitch. How can I assist you today?",
+          audio: await audioFileToBase64("audios/intro_0.wav"),
+          lipsync: await readJsonTranscript("audios/intro_0.json"),
+          facialExpression: "smile",
+          animation: "Talking_1",
+        },
+        {
+          text: "I am here to help you with tasks, answer questions, and coordinate your digital interface needs. What would you like to work on?",
+          audio: await audioFileToBase64("audios/intro_1.wav"),
+          lipsync: await readJsonTranscript("audios/intro_1.json"),
+          facialExpression: "smile",
+          animation: "Talking_2",
+        },
+      ],
+    });
+    return;
+  }
+  // No API keys needed for local setup!
+  console.log("Using fully local setup: LM Studio + Piper TTS + wawa-lipsync");
+
+  // Build messages array with conversation history
+  const conversationMessages = buildMessagesArray(sessionId, userMessage || "Hello");
+
+  const completion = await openai.chat.completions.create({
+    model: LM_STUDIO_MODEL,
+    max_tokens: 2000, // Increased to allow for complete JSON responses
+    temperature: 0.6,
+    messages: conversationMessages,
   });
 
   let messages;
@@ -332,11 +443,22 @@ Maximum 3 messages. Respond with JSON only.`,
     }
   }
 
+  // Store conversation in session memory
+  addToConversationHistory(sessionId, userMessage, messages);
+
   res.send({ messages });
+
+  } catch (error) {
+    console.error('❌ Error in chat endpoint:', error);
+    res.status(500).json({
+      error: 'Internal server error',
+      message: 'An error occurred while processing your request. Please try again.'
+    });
+  }
 });
 
 // audioFileToBase64 is now imported from piper_tts.js
 
 app.listen(port, () => {
-  console.log(`Virtual Girlfriend listening on port ${port}`);
+  console.log(`Brilliant Interface Task Coordinator and Helper listening on port ${port}`);
 });
