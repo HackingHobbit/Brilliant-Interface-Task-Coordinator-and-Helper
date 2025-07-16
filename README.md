@@ -10,9 +10,11 @@ This project prioritizes **complete local operation** - no cloud dependencies, n
 
 ### 🧠 **AI & Language**
 - **Local LLM Integration** via [LM Studio](https://lmstudio.ai/)
-- **Intelligent Conversation** with context awareness
+- **Session Memory System** with persistent conversation history
+- **Intelligent Conversation** with context awareness across sessions
 - **JSON-structured responses** for coordinated speech, expressions, and animations
 - **Smart text processing** to handle contractions and punctuation for optimal TTS
+- **AI Identity**: Brilliant Interface Task Coordinator and Helper (B.I.T.C.H.)
 
 ### 🎭 **3D Avatar & Animation**
 - **Interactive 3D Avatar** built with React Three Fiber
@@ -28,10 +30,13 @@ This project prioritizes **complete local operation** - no cloud dependencies, n
 - **Optimized pronunciation** with contraction expansion and punctuation handling
 
 ### 🖥️ **User Interface**
-- **Clean, minimal design** with focus on avatar interaction
-- **Real-time chat interface** with message history
+- **Futuristic theme** with cyberpunk-inspired design elements
+- **Comprehensive Settings Panel** with tabbed organization
+- **Real-time chat interface** with persistent message history
+- **Backend health monitoring** with visual status indicators
+- **Auto-focus management** for seamless user interaction
+- **Session memory controls** with clear memory functionality
 - **Responsive layout** optimized for desktop interaction
-- **Debug logging** for development and troubleshooting
 
 ## 🏗️ **Technical Architecture**
 
@@ -41,11 +46,13 @@ This project prioritizes **complete local operation** - no cloud dependencies, n
 - **Custom hooks** for chat management and lip sync
 - **Tailwind CSS** for styling
 
-### **Backend** (`r3f-virtual-girlfriend-backend/`)
-- **Node.js + Express** API server
-- **LM Studio integration** for local LLM responses
+### **Backend** (`core/backend/`)
+- **Node.js + Express** API server with comprehensive error handling
+- **Session Management** with in-memory conversation storage
+- **LM Studio integration** for local LLM responses with context
 - **Piper TTS integration** for voice synthesis
 - **Smart text processing** pipeline for optimal speech output
+- **RESTful API endpoints** for chat, health monitoring, and session management
 
 ## 📦 **Dependencies & Sources**
 
@@ -123,33 +130,41 @@ The roadmap follows a **"Smart First, Customizable Second, Advanced Third"** app
 
 ## 🎯 **Roadmap & Future Features**
 
-### **Phase 1: Foundation & UI** 🎨
+### **Phase 1: Foundation & UI** 🎨 ✅ **COMPLETED**
 *Easy wins that improve user experience immediately*
-- [ ] **Settings Menu**
-  - Slide-over interface design
-  - Hidden by default, accessible via gear icon
-- [ ] **UI Modernization**
-  - Futuristic visual design
-  - Enhanced animations and transitions
+- ✅ **Settings Menu**
+  - Comprehensive tabbed settings panel
+  - Appearance, Audio, AI, Behavior, and Debug sections
+  - Futuristic theme integration
+- ✅ **UI Modernization**
+  - Futuristic cyberpunk theme with glow effects
+  - Enhanced visual feedback and animations
+  - Backend health status indicators
+  - Auto-focus management for better UX
+- ✅ **Performance Monitoring**
+  - Backend health monitoring with visual indicators
+  - Real-time status checking and error reporting
 - [ ] **Response Modes**
   - Text vs. audio response selection
   - Unobtrusive text display integration
-- [ ] **Performance Monitoring**
-  - Real-time system resource monitoring
-  - Basic optimization alerts
 
-### **Phase 2: Memory & Core Intelligence** 🧠
+### **Phase 2: Memory & Core Intelligence** 🧠 🚧 **IN PROGRESS**
 *Fundamental AI improvements that make conversations truly intelligent*
-- [ ] **AI Memory System**
-  - Individual conversation memory
-  - Facts-based long-term memory
-  - Efficient local storage with fast retrieval
+- ✅ **Short-Term Memory (Session Memory)**
+  - Session-based conversation memory with persistent storage
+  - Automatic session cleanup and management
+  - Clear memory functionality for fresh starts
+  - Context-aware responses within conversations
+- [ ] **Long-Term Memory System**
+  - Facts-based persistent memory across sessions
+  - User preferences and personality learning
+  - Important information retention and recall
 - [ ] **Local Backup Systems**
   - Conversation and memory backup
   - Settings and customization preservation
-- [ ] **Contextual Awareness**
+- [ ] **Advanced Contextual Features**
   - Integration with calendar, weather, system status
-  - Context-aware responses
+  - Enhanced contextual awareness
 
 ### **Phase 3: Content & Customization** 🎭
 *Expanding available options (benefits from memory system)*
@@ -205,6 +220,101 @@ The roadmap follows a **"Smart First, Customizable Second, Advanced Third"** app
 - [ ] **Accessibility Features**
   - Screen reader support and compliance
   - Keyboard navigation and visual indicators
+
+## 📡 **Backend API Documentation**
+
+The backend server provides several RESTful API endpoints for frontend communication and system management.
+
+### **Base URL**
+```
+http://localhost:3000
+```
+
+### **Endpoints**
+
+#### **GET /**
+Basic health check endpoint.
+- **Response**: `"Hello World!"`
+
+#### **GET /health**
+Comprehensive system health status.
+- **Response**:
+```json
+{
+  "status": "healthy",
+  "timestamp": "2025-07-16T05:35:03.071Z",
+  "services": {
+    "backend": "running",
+    "lmStudio": "http://localhost:1234",
+    "piperTTS": "local"
+  }
+}
+```
+
+#### **GET /voices**
+Available TTS voice models.
+- **Response**:
+```json
+[
+  {
+    "voice_id": "en_GB-alba-medium",
+    "name": "Alba (British English)",
+    "category": "local_tts"
+  }
+]
+```
+
+#### **POST /chat**
+Main conversation endpoint with session memory support.
+- **Request Body**:
+```json
+{
+  "message": "Hello, how are you?",
+  "sessionId": "session_1752643558132_86w5zc00v"
+}
+```
+- **Response**:
+```json
+{
+  "messages": [
+    {
+      "text": "Hello! I am doing well, thank you for asking.",
+      "facialExpression": "smile",
+      "animation": "Talking_1",
+      "audio": "base64_encoded_audio_data",
+      "lipsync": null
+    }
+  ]
+}
+```
+
+#### **POST /clear-session**
+Clear conversation memory for a specific session.
+- **Request Body**:
+```json
+{
+  "sessionId": "session_1752643558132_86w5zc00v"
+}
+```
+- **Response**:
+```json
+{
+  "success": true,
+  "message": "Session cleared successfully"
+}
+```
+
+### **Error Handling**
+All endpoints include comprehensive error handling:
+- **500 Internal Server Error**: Server-side errors with descriptive messages
+- **400 Bad Request**: Missing required parameters
+- **JSON Error Responses**: Structured error information for debugging
+
+### **Session Management**
+- **Session IDs**: Unique identifiers for conversation continuity
+- **Memory Limit**: 20 exchanges (40 messages) per session
+- **Auto-Cleanup**: Sessions expire after 30 minutes of inactivity
+- **Persistence**: Frontend manages session ID persistence via localStorage
 
 ## 🤝 **Contributing**
 
