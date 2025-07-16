@@ -28,6 +28,19 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "healthy",
+    timestamp: new Date().toISOString(),
+    services: {
+      backend: "running",
+      lmStudio: LM_STUDIO_BASE_URL,
+      piperTTS: "local"
+    }
+  });
+});
+
 app.get("/voices", async (req, res) => {
   // Return available Piper voices (for now just the configured one)
   res.send([{

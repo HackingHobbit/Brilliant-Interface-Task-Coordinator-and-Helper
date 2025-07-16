@@ -1,0 +1,254 @@
+/* Futuristic Theme for Brilliant Interface */
+
+/* Custom Properties for Futuristic Design */
+:root {
+  /* Color Palette - Cyberpunk/Sci-Fi */
+  --primary-cyan: #00ffff;
+  --primary-blue: #0066ff;
+  --primary-purple: #6600ff;
+  --accent-neon: #ff00ff;
+  --accent-orange: #ff6600;
+  --accent-green: #00ff66;
+  
+  /* Dark Theme Colors */
+  --bg-dark: #0a0a0f;
+  --bg-darker: #050508;
+  --bg-panel: rgba(15, 15, 25, 0.8);
+  --bg-glass: rgba(0, 255, 255, 0.1);
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3ff;
+  --text-accent: #00ffff;
+  --text-muted: #666699;
+  
+  /* Effects */
+  --glow-cyan: 0 0 20px rgba(0, 255, 255, 0.5);
+  --glow-purple: 0 0 20px rgba(102, 0, 255, 0.5);
+  --glow-neon: 0 0 30px rgba(255, 0, 255, 0.6);
+  
+  /* Animations */
+  --transition-fast: 0.2s ease-out;
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Borders */
+  --border-glow: 1px solid rgba(0, 255, 255, 0.3);
+  --border-accent: 1px solid rgba(255, 0, 255, 0.4);
+}
+
+/* Futuristic Background */
+.futuristic-bg {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(102, 0, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 0, 255, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Grid Background */
+.futuristic-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* Glass Morphism Panels */
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border: var(--border-glow);
+  border-radius: 12px;
+  box-shadow: 
+    var(--glow-cyan),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Neon Buttons */
+.neon-button {
+  background: linear-gradient(45deg, var(--primary-cyan), var(--primary-blue));
+  border: none;
+  border-radius: 8px;
+  color: var(--bg-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  box-shadow: var(--glow-cyan);
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left var(--transition-smooth);
+}
+
+.neon-button:hover::before {
+  left: 100%;
+}
+
+.neon-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 40px rgba(0, 255, 255, 0.8),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.neon-button:active {
+  transform: translateY(0);
+}
+
+/* Accent Button Variant */
+.neon-button.accent {
+  background: linear-gradient(45deg, var(--accent-neon), var(--primary-purple));
+  box-shadow: var(--glow-purple);
+}
+
+.neon-button.accent:hover {
+  box-shadow: 
+    0 0 40px rgba(255, 0, 255, 0.8),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Futuristic Input Fields */
+.cyber-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: var(--border-glow);
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 16px 20px;
+  font-size: 16px;
+  transition: all var(--transition-smooth);
+  backdrop-filter: blur(10px);
+}
+
+.cyber-input::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.cyber-input:focus {
+  outline: none;
+  border-color: var(--primary-cyan);
+  box-shadow: 
+    var(--glow-cyan),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Holographic Text Effect */
+.holo-text {
+  background: linear-gradient(45deg, var(--primary-cyan), var(--accent-neon), var(--primary-cyan));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: holo-shift 3s ease-in-out infinite;
+  font-weight: 900;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+@keyframes holo-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Pulsing Glow Animation */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+  to { box-shadow: 0 0 40px rgba(0, 255, 255, 0.8); }
+}
+
+/* Scan Line Effect */
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    transparent 50%,
+    rgba(0, 255, 255, 0.03) 50%,
+    rgba(0, 255, 255, 0.03) 51%,
+    transparent 51%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  animation: scan-lines 0.1s linear infinite;
+}
+
+@keyframes scan-lines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 4px; }
+}
+
+/* Loading Spinner */
+.cyber-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 255, 255, 0.3);
+  border-top: 3px solid var(--primary-cyan);
+  border-radius: 50%;
+  animation: cyber-spin 1s linear infinite;
+  box-shadow: var(--glow-cyan);
+}
+
+@keyframes cyber-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glass-panel {
+    backdrop-filter: blur(15px);
+    border-radius: 8px;
+  }
+  
+  .neon-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .cyber-input {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}

@@ -14,7 +14,7 @@ NC='\033[0m' # No Color
 
 # Configuration
 BACKEND_PORT=3000
-FRONTEND_PORT=5174
+FRONTEND_PORT=5173
 FRONTEND_URL="http://localhost:${FRONTEND_PORT}"
 LM_STUDIO_URL="http://localhost:1234"
 
@@ -134,12 +134,21 @@ main() {
     # Start backend
     echo -e "${BLUE}🚀 Starting backend server...${NC}"
     cd core/backend
-    npm start > /dev/null 2>&1 &
+
+    # Start backend with error logging
+    npm start > backend.log 2>&1 &
     BACKEND_PID=$!
     cd ../..
     
     # Wait for backend to start
     if ! wait_for_service $BACKEND_PORT "Backend"; then
+        echo -e "${RED}💥 Backend failed to start! Check the backend logs for errors.${NC}"
+        echo -e "${YELLOW}📋 Backend log: core/backend/backend.log${NC}"
+        echo -e "${YELLOW}💡 Try running 'cd core/backend && npm start' manually to see error details${NC}"
+        if [ -f "core/backend/backend.log" ]; then
+            echo -e "${YELLOW}📄 Last few lines of backend log:${NC}"
+            tail -5 core/backend/backend.log
+        fi
         kill $BACKEND_PID 2>/dev/null || true
         exit 1
     fi
@@ -153,6 +162,11 @@ main() {
     
     # Wait for frontend to start
     if ! wait_for_service $FRONTEND_PORT "Frontend"; then
+        echo -e "${RED}💥 Frontend failed to start! This might be due to:${NC}"
+        echo -e "${YELLOW}   • Port $FRONTEND_PORT already in use${NC}"
+        echo -e "${YELLOW}   • Node.js/npm issues${NC}"
+        echo -e "${YELLOW}   • Missing dependencies${NC}"
+        echo -e "${YELLOW}💡 Try running 'cd core/frontend && npm run dev' manually to see error details${NC}"
         kill $BACKEND_PID $FRONTEND_PID 2>/dev/null || true
         exit 1
     fi
@@ -171,7 +185,8 @@ main() {
     # Set up cleanup on exit
     trap 'echo -e "\n${YELLOW}🛑 Shutting down services...${NC}"; kill $BACKEND_PID $FRONTEND_PID 2>/dev/null || true; exit 0' INT TERM
     
-    # Keep script running
+    # Keep script running and monitor services
+    echo -e "${BLUE}🔄 Monitoring services... Press Ctrl+C to stop${NC}"
     wait
 }
 

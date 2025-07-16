@@ -11,6 +11,7 @@ import { Avatar } from "./Avatar";
 const Dots = (props) => {
   const { loading } = useChat();
   const [loadingText, setLoadingText] = useState("");
+
   useEffect(() => {
     if (loading) {
       const interval = setInterval(() => {
@@ -29,9 +30,16 @@ const Dots = (props) => {
   if (!loading) return null;
   return (
     <group {...props}>
-      <Text fontSize={0.14} anchorX={"left"} anchorY={"bottom"}>
+      <Text
+        fontSize={0.14}
+        anchorX={"left"}
+        anchorY={"bottom"}
+      >
         {loadingText}
-        <meshBasicMaterial attach="material" color="black" />
+        <meshBasicMaterial
+          attach="material"
+          color="#ffffff"
+        />
       </Text>
     </group>
   );
