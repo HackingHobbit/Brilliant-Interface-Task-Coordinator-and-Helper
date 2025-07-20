@@ -3,7 +3,18 @@ import { useChat } from '../hooks/useChat';
 
 export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeChange }) => {
   const [activeTab, setActiveTab] = useState('appearance');
-  const { clearMemory } = useChat();
+  const { clearMemory, sessionId } = useChat();
+  const [roles, setRoles] = useState([]);
+  const [personalities, setPersonalities] = useState([]);
+  const [currentIdentity, setCurrentIdentity] = useState(null);
+  const [selectedRole, setSelectedRole] = useState('general-assistant');
+  const [selectedPersonality, setSelectedPersonality] = useState('');
+  const [aiPersons, setAiPersons] = useState([]);
+  const [selectedAiPerson, setSelectedAiPerson] = useState(null);
+  const [newAiPersonName, setNewAiPersonName] = useState('');
+  const [customPersonalityPrompt, setCustomPersonalityPrompt] = useState('');
+  const [isLoadingIdentity, setIsLoadingIdentity] = useState(false);
+  const [identityError, setIdentityError] = useState(null);
   const [settings, setSettings] = useState({
     // Appearance & UI
     theme: 'futuristic',
@@ -57,13 +68,18 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
       onThemeChange(value);
     }
 
-    // TODO: Persist settings to localStorage or backend
+    // Persist settings to localStorage
+    localStorage.setItem('brilliantInterfaceSettings', JSON.stringify({
+      ...settings,
+      [key]: value
+    }));
+
     console.log(`🔧 Setting updated: ${key} = ${value}`);
   };
 
   const resetToDefaults = () => {
     if (confirm('Reset all settings to defaults?')) {
-      setSettings({
+      const defaultSettings = {
         theme: 'futuristic',
         uiScale: 100,
         showAnimations: true,
@@ -95,11 +111,14 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
         facialExpressions: true,
         gestureAnimations: true,
         eyeTracking: false
-      });
+      };
+      setSettings(defaultSettings);
+      localStorage.setItem('brilliantInterfaceSettings', JSON.stringify(defaultSettings));
     }
   };
 
   const tabs = [
+    { id: 'identity', label: theme === 'futuristic' ? 'IDENTITY' : 'Identity', icon: '🎭' },
     { id: 'appearance', label: theme === 'futuristic' ? 'VISUAL' : 'Appearance', icon: '🎨' },
     { id: 'audio', label: theme === 'futuristic' ? 'AUDIO' : 'Audio', icon: '🔊' },
     { id: 'ai', label: theme === 'futuristic' ? 'AI CORE' : 'AI Model', icon: '🤖' },
@@ -107,6 +126,186 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
     { id: 'avatar', label: theme === 'futuristic' ? 'AVATAR' : 'Avatar', icon: '👤' },
     { id: 'advanced', label: theme === 'futuristic' ? 'ADVANCED' : 'Advanced', icon: '🔧' }
   ];
+
+  // Load identity data when panel opens
+  useEffect(() => {
+    if (isOpen) {
+      // Load settings from localStorage
+      const savedSettings = localStorage.getItem('brilliantInterfaceSettings');
+      if (savedSettings) {
+        try {
+          setSettings(JSON.parse(savedSettings));
+        } catch (e) {
+          console.warn('Failed to parse saved settings:', e);
+        }
+      }
+      loadIdentityData();
+    }
+  }, [isOpen, sessionId]);
+
+  const loadIdentityData = async () => {
+    setIsLoadingIdentity(true);
+    setIdentityError(null);
+    
+    try {
+      const backendUrl = 'http://localhost:3000';
+      
+      // Load roles
+      const rolesResponse = await fetch(`${backendUrl}/identity/roles`);
+      if (rolesResponse.ok) {
+        const rolesData = await rolesResponse.json();
+        setRoles(rolesData.roles || []);
+      }
+      
+      // Load personalities
+      const personalitiesResponse = await fetch(`${backendUrl}/identity/personalities`);
+      if (personalitiesResponse.ok) {
+        const personalitiesData = await personalitiesResponse.json();
+        setPersonalities(personalitiesData.personalities || []);
+      }
+      
+      // Load current identity
+      let currentAiPersonId = null;
+      if (sessionId) {
+        const identityResponse = await fetch(`${backendUrl}/identity/current/${sessionId}`);
+        if (identityResponse.ok) {
+          const data = await identityResponse.json();
+          setCurrentIdentity(data.identity);
+          setSelectedRole(data.identity.roleId || 'general-assistant');
+          setSelectedPersonality(data.identity.personalityId || '');
+          setCustomPersonalityPrompt(data.identity.customPrompt || '');
+          currentAiPersonId = data.identity.aiPersonId;
+        }
+      }
+      
+      // Load all AI Persons
+      const aiPersonsResponse = await fetch(`${backendUrl}/api/ai-persons`);
+      if (aiPersonsResponse.ok) {
+        const data = await aiPersonsResponse.json();
+        setAiPersons(data.aiPersons || []);
+        
+        // Set the selected AI Person based on current identity
+        if (currentAiPersonId && data.aiPersons?.some(p => p.id === currentAiPersonId)) {
+          setSelectedAiPerson(currentAiPersonId);
+        }
+      }
+
+      // Load long-term memory summary for current AI Person
+      if (currentAiPersonId) {
+        const memorySummaryResponse = await fetch(`${backendUrl}/memory/summary/${currentAiPersonId}`);
+        if (memorySummaryResponse.ok) {
+          const memorySummary = await memorySummaryResponse.json();
+          // You can store or display memory summary as needed
+          console.log('Loaded memory summary:', memorySummary);
+        }
+      }
+    } catch (error) {
+      console.error('Error loading identity data:', error);
+      setIdentityError('Failed to load identity data');
+    } finally {
+      setIsLoadingIdentity(false);
+    }
+  };
+
+  const updateIdentity = async () => {
+    setIsLoadingIdentity(true);
+    setIdentityError(null);
+    
+    try {
+      const backendUrl = 'http://localhost:3000';
+      
+      // If we have a selected AI Person, update it instead of creating new
+      if (selectedAiPerson) {
+        // First update the AI Person itself if needed
+        const currentPerson = aiPersons.find(p => p.id === selectedAiPerson);
+        if (currentPerson && (currentPerson.roleId !== selectedRole || currentPerson.personalityId !== selectedPersonality)) {
+          const updateResponse = await fetch(`${backendUrl}/api/ai-persons/${selectedAiPerson}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              roleId: selectedRole,
+              personalityId: selectedPersonality,
+              customPrompt: customPersonalityPrompt || undefined
+            })
+          });
+          
+          if (!updateResponse.ok) {
+            throw new Error('Failed to update AI Person');
+          }
+        }
+      }
+      
+      // Then update the session identity
+      const response = await fetch(`${backendUrl}/identity/update`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sessionId,
+          roleId: selectedRole,
+          personalityId: selectedPersonality,
+          aiPersonId: selectedAiPerson,
+          customPrompt: customPersonalityPrompt || undefined
+        })
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setCurrentIdentity(data.identity);
+        setSelectedAiPerson(data.identity.aiPersonId);
+        // Reload AI Persons to reflect any updates
+        await loadIdentityData();
+        console.log('✅ Identity updated successfully');
+      } else {
+        throw new Error('Failed to update identity');
+      }
+    } catch (error) {
+      console.error('Error updating identity:', error);
+      setIdentityError('Failed to update identity');
+    } finally {
+      setIsLoadingIdentity(false);
+    }
+  };
+
+  const createNewAiPerson = async () => {
+    if (!newAiPersonName.trim()) {
+      setIdentityError('Please enter a name for the new AI Person');
+      return;
+    }
+    
+    setIsLoadingIdentity(true);
+    setIdentityError(null);
+    
+    try {
+      const backendUrl = 'http://localhost:3000';
+      const response = await fetch(`${backendUrl}/api/ai-persons`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          roleId: selectedRole,
+          personalityId: selectedPersonality,
+          name: newAiPersonName.trim()
+        })
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setNewAiPersonName(''); // Clear the name input first
+        await loadIdentityData(); // Reload to get updated list
+        // Set the newly created AI Person as selected after the list is updated
+        setTimeout(() => {
+          setSelectedAiPerson(data.aiPerson.id);
+        }, 100);
+        console.log('✅ New AI Person created:', data.aiPerson.id);
+      } else {
+        throw new Error('Failed to create AI Person');
+      }
+    } catch (error) {
+      console.error('Error creating AI Person:', error);
+      setIdentityError('Failed to create AI Person');
+    } finally {
+      setIsLoadingIdentity(false);
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -182,6 +381,457 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
 
         {/* Tab Content */}
         <div className="flex-1 overflow-y-auto">
+
+          {/* Identity Tab */}
+          {activeTab === 'identity' && (
+            <div className="space-y-6">
+              {isLoadingIdentity ? (
+                <div className="text-center py-8">
+                  <div className={`inline-block ${theme === 'futuristic' ? 'cyber-spinner' : ''}`}>
+                    Loading identity data...
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {identityError && (
+                    <div className={`p-4 rounded ${
+                      theme === 'futuristic' 
+                        ? 'bg-red-900/30 border border-red-500/50 text-red-300'
+                        : 'bg-red-100 border border-red-300 text-red-700'
+                    }`}>
+                      {identityError}
+                    </div>
+                  )}
+
+                  {/* Current Identity Display */}
+                  {currentIdentity && (
+                    <div className={`p-4 rounded ${
+                      theme === 'futuristic'
+                        ? 'bg-cyan-900/20 border border-cyan-500/30'
+                        : 'bg-blue-50 border border-blue-200'
+                    }`}>
+                      <h3 className={`font-medium mb-2 ${
+                        theme === 'futuristic' ? 'text-cyan-300' : 'text-blue-800'
+                      }`}>
+                        Current Identity
+                      </h3>
+                      <p className={`text-sm ${
+                        theme === 'futuristic' ? 'text-gray-300' : 'text-gray-700'
+                      }`}>
+                        <strong>Name:</strong> {currentIdentity.personality}<br />
+                        <strong>Role:</strong> {currentIdentity.role}<br />
+                        <strong>AI Person ID:</strong> {currentIdentity.aiPersonId}
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* AI Person Selection */}
+                    <div>
+                      <label className={`block text-sm font-medium mb-2 ${
+                        theme === 'futuristic' ? 'text-cyan-300' : 'text-gray-700'
+                      }`}>
+                        AI Person
+                      </label>
+                      <div className="flex gap-2">
+                        <select
+                          value={selectedAiPerson || ''}
+                          onChange={(e) => {
+                            const personId = e.target.value;
+                            setSelectedAiPerson(personId);
+                            // Update role and personality based on selected AI Person
+                            if (personId) {
+                              const person = aiPersons.find(p => p.id === personId);
+                              if (person) {
+                                setSelectedRole(person.roleId || 'general-assistant');
+                                setSelectedPersonality(person.personalityId || '');
+                                setNewAiPersonName(person.name || ''); // Set the name for editing
+                                setCustomPersonalityPrompt(person.customPrompt || ''); // Load custom prompt
+                              }
+                            } else {
+                              // Clear custom prompt when no AI Person is selected
+                              setCustomPersonalityPrompt('');
+                            }
+                          }}
+                          className={`flex-1 p-3 rounded ${
+                            theme === 'futuristic'
+                              ? 'cyber-input'
+                              : 'border border-gray-300 bg-white'
+                          }`}
+                        >
+                          <option value="">Select AI Person...</option>
+                          {aiPersons.map((person) => (
+                            <option key={person.id} value={person.id}>
+                              {person.name} ({person.role})
+                            </option>
+                          ))}
+                        </select>
+                        {selectedAiPerson && (
+                          <button
+                            onClick={async () => {
+                              if (aiPersons.length <= 1) {
+                                setIdentityError('Cannot delete the last AI Person. At least one must exist.');
+                                return;
+                              }
+                              
+                              if (confirm(`Are you sure you want to delete this AI Person? This will also delete all associated memories.`)) {
+                                setIsLoadingIdentity(true);
+                                setIdentityError(null);
+                                
+                                try {
+                                  const backendUrl = 'http://localhost:3000';
+                                  const response = await fetch(`${backendUrl}/api/ai-persons/${selectedAiPerson}`, {
+                                    method: 'DELETE'
+                                  });
+                                  
+                                  if (response.ok) {
+                                    await loadIdentityData();
+                                    setSelectedAiPerson(null);
+                                    console.log('✅ AI Person deleted successfully');
+                                  } else {
+                                    const error = await response.json();
+                                    throw new Error(error.message || 'Failed to delete AI Person');
+                                  }
+                                } catch (error) {
+                                  console.error('Error deleting AI Person:', error);
+                                  setIdentityError(error.message || 'Failed to delete AI Person');
+                                } finally {
+                                  setIsLoadingIdentity(false);
+                                }
+                              }
+                            }}
+                            disabled={aiPersons.length <= 1}
+                            className={`p-3 rounded ${
+                              theme === 'futuristic'
+                                ? 'bg-red-900/30 border border-red-500/50 text-red-300 hover:bg-red-900/50'
+                                : 'bg-red-100 border border-red-300 text-red-700 hover:bg-red-200'
+                            } ${aiPersons.length <= 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            title={aiPersons.length <= 1 ? 'Cannot delete the last AI Person' : 'Delete this AI Person'}
+                          >
+                            🗑️
+                          </button>
+                        )}
+                      </div>
+                      <div className="mt-2 space-y-2">
+                        <input
+                          type="text"
+                          value={newAiPersonName}
+                          onChange={(e) => setNewAiPersonName(e.target.value)}
+                          placeholder={selectedAiPerson ? "Edit AI Person name" : "Enter name for new AI Person"}
+                          className={`w-full p-2 rounded text-sm ${
+                            theme === 'futuristic'
+                              ? 'cyber-input'
+                              : 'border border-gray-300 bg-white'
+                          }`}
+                        />
+                        {selectedAiPerson ? (
+                          <button
+                            onClick={async () => {
+                              if (!newAiPersonName.trim()) {
+                                setIdentityError('Please enter a name');
+                                return;
+                              }
+                              
+                              setIsLoadingIdentity(true);
+                              setIdentityError(null);
+                              
+                              try {
+                                const backendUrl = 'http://localhost:3000';
+                                const response = await fetch(`${backendUrl}/api/ai-persons/${selectedAiPerson}`, {
+                                  method: 'PUT',
+                                  headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({
+                                    roleId: selectedRole,
+                                    personalityId: selectedPersonality,
+                                    name: newAiPersonName.trim()
+                                  })
+                                });
+                                
+                                if (response.ok) {
+                                  const data = await response.json();
+                                  await loadIdentityData();
+                                  // Ensure the updated AI Person remains selected
+                                  setSelectedAiPerson(data.aiPerson.id);
+                                  console.log('✅ AI Person name updated');
+                                } else {
+                                  throw new Error('Failed to update AI Person name');
+                                }
+                              } catch (error) {
+                                console.error('Error updating AI Person name:', error);
+                                setIdentityError('Failed to update AI Person name');
+                              } finally {
+                                setIsLoadingIdentity(false);
+                              }
+                            }}
+                            disabled={!newAiPersonName.trim() || isLoadingIdentity}
+                            className={`w-full p-2 rounded text-sm ${
+                              theme === 'futuristic'
+                                ? 'neon-button accent'
+                                : 'bg-blue-500 hover:bg-blue-600 text-white'
+                            } ${!newAiPersonName.trim() || isLoadingIdentity ? 'opacity-50 cursor-not-allowed' : ''}`}
+                          >
+                            Update Name
+                          </button>
+                        ) : (
+                          <button
+                            onClick={createNewAiPerson}
+                            disabled={!newAiPersonName.trim()}
+                            className={`w-full p-2 rounded text-sm ${
+                              theme === 'futuristic'
+                                ? 'neon-button'
+                                : 'bg-green-500 hover:bg-green-600 text-white'
+                            } ${!newAiPersonName.trim() ? 'opacity-50 cursor-not-allowed' : ''}`}
+                          >
+                            + Create New AI Person
+                          </button>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Role Selection */}
+                    <div>
+                      <label className={`block text-sm font-medium mb-2 ${
+                        theme === 'futuristic' ? 'text-cyan-300' : 'text-gray-700'
+                      }`}>
+                        Role
+                      </label>
+                      <select
+                        value={selectedRole}
+                        onChange={(e) => setSelectedRole(e.target.value)}
+                        className={`w-full p-3 rounded ${
+                          theme === 'futuristic'
+                            ? 'cyber-input'
+                            : 'border border-gray-300 bg-white'
+                        }`}
+                      >
+                        {roles.map((role) => (
+                          <option key={role.id} value={role.id}>
+                            {role.name}
+                          </option>
+                        ))}
+                      </select>
+                      {selectedRole && roles.length > 0 && (
+                        <p className={`text-xs mt-1 ${
+                          theme === 'futuristic' ? 'text-gray-400' : 'text-gray-500'
+                        }`}>
+                          {roles.find(r => r.id === selectedRole)?.description}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Personality Selection */}
+                    <div className="md:col-span-2">
+                      <label className={`block text-sm font-medium mb-2 ${
+                        theme === 'futuristic' ? 'text-cyan-300' : 'text-gray-700'
+                      }`}>
+                        Personality
+                      </label>
+                      <select
+                        value={selectedPersonality}
+                        onChange={(e) => setSelectedPersonality(e.target.value)}
+                        className={`w-full p-3 rounded ${
+                          theme === 'futuristic'
+                            ? 'cyber-input'
+                            : 'border border-gray-300 bg-white'
+                        }`}
+                      >
+                        <option value="">Select Personality...</option>
+                        {personalities.map((personality) => (
+                          <option key={personality.id} value={personality.id}>
+                            {personality.name}
+                          </option>
+                        ))}
+                      </select>
+                      {selectedPersonality && personalities.length > 0 && (
+                        <p className={`text-xs mt-1 ${
+                          theme === 'futuristic' ? 'text-gray-400' : 'text-gray-500'
+                        }`}>
+                          {(() => {
+                            const personality = personalities.find(p => p.id === selectedPersonality);
+                            if (!personality?.personalityTraits) return null;
+                            
+                            const traits = personality.personalityTraits;
+                            const traitDescriptions = [];
+                            
+                            if (traits.enthusiasm > 0.7) traitDescriptions.push('Enthusiastic');
+                            if (traits.formality > 0.7) traitDescriptions.push('Formal');
+                            else if (traits.formality < 0.3) traitDescriptions.push('Casual');
+                            if (traits.humor > 0.7) traitDescriptions.push('Humorous');
+                            if (traits.empathy > 0.7) traitDescriptions.push('Empathetic');
+                            
+                            return traitDescriptions.length > 0 ? traitDescriptions.join(', ') : 'Balanced personality';
+                          })()}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Custom Personality Prompt */}
+                    <div className="md:col-span-2">
+                      <label className={`block text-sm font-medium mb-2 ${
+                        theme === 'futuristic' ? 'text-cyan-300' : 'text-gray-700'
+                      }`}>
+                        Custom Personality Description (Optional)
+                      </label>
+                      <textarea
+                        value={customPersonalityPrompt}
+                        onChange={(e) => setCustomPersonalityPrompt(e.target.value)}
+                        placeholder="Enter a custom personality description to override the selected personality. This allows you to create unique behaviors and characteristics..."
+                        rows={4}
+                        className={`w-full p-3 rounded ${
+                          theme === 'futuristic'
+                            ? 'cyber-input'
+                            : 'border border-gray-300 bg-white'
+                        }`}
+                      />
+                      <p className={`text-xs mt-1 ${
+                        theme === 'futuristic' ? 'text-gray-400' : 'text-gray-500'
+                      }`}>
+                        This will override the selected personality's default prompt. Leave empty to use the default.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+                    {/* Update Button */}
+                    <div>
+                      <button
+                        onClick={updateIdentity}
+                        disabled={isLoadingIdentity}
+                        className={`w-full p-3 rounded font-medium transition-all ${
+                          theme === 'futuristic'
+                            ? 'neon-button accent pulse-glow'
+                            : 'bg-blue-500 hover:bg-blue-600 text-white'
+                        } ${isLoadingIdentity ? 'opacity-50 cursor-not-allowed' : ''}`}
+                      >
+                        {isLoadingIdentity ? 'Updating...' : 'Update Identity'}
+                      </button>
+                      <p className={`text-xs mt-2 ${
+                        theme === 'futuristic' ? 'text-gray-400' : 'text-gray-500'
+                      }`}>
+                        Changes will take effect immediately
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Personality Details */}
+          {selectedPersonality && personalities.length > 0 && (
+            <div className={`mt-6 p-4 rounded ${
+              theme === 'futuristic'
+                ? 'bg-gray-800/50 border border-gray-700'
+                : 'bg-gray-50 border border-gray-200'
+            }`}>
+              <h4 className={`font-medium mb-3 ${
+                theme === 'futuristic' ? 'text-cyan-300' : 'text-gray-800'
+              }`}>
+                Personality Details
+              </h4>
+              {(() => {
+                const personality = personalities.find(p => p.id === selectedPersonality);
+                if (!personality) return null;
+
+                // Extract personality traits object
+                const traits = personality.personalityTraits || {};
+
+                return (
+                  <div className="space-y-4">
+                    <div>
+                      <span className={`text-sm font-medium ${
+                        theme === 'futuristic' ? 'text-gray-300' : 'text-gray-600'
+                      }`}>Voice Settings:</span>
+                      <p className={`text-sm ${
+                        theme === 'futuristic' ? 'text-gray-400' : 'text-gray-500'
+                      }`}>
+                        Voice: {personality.voice?.voiceId || 'Default'}<br />
+                        {personality.voice?.settings && (
+                          <>Speed: {personality.voice.settings.speed}x, Pitch: {personality.voice.settings.pitch}x</>
+                        )}
+                      </p>
+                    </div>
+                    <div>
+                      <span className={`text-sm font-medium ${
+                        theme === 'futuristic' ? 'text-gray-300' : 'text-gray-600'
+                      }`}>Avatar:</span>
+                      <p className={`text-sm ${
+                        theme === 'futuristic' ? 'text-gray-400' : 'text-gray-500'
+                      }`}>
+                        Default Expression: {personality.avatar?.defaultExpression || 'smile'}
+                      </p>
+                    </div>
+
+                    {/* Personality Traits Sliders */}
+                    <div>
+                      <h5 className={`font-semibold mb-2 ${
+                        theme === 'futuristic' ? 'text-cyan-300' : 'text-gray-700'
+                      }`}>Adjust Personality Traits</h5>
+                      {Object.entries(traits).map(([trait, value]) => (
+                        <div key={trait} className="mb-3">
+                          <label htmlFor={`trait-${trait}`} className={`block text-sm font-medium mb-1 ${
+                            theme === 'futuristic' ? 'text-gray-300' : 'text-gray-700'
+                          }`}>
+                            {trait.charAt(0).toUpperCase() + trait.slice(1)}: {value.toFixed(2)}
+                          </label>
+                          <input
+                            id={`trait-${trait}`}
+                            type="range"
+                            min={-1}
+                            max={1}
+                            step={0.01}
+                            value={value}
+                            onChange={(e) => {
+                              const newValue = parseFloat(e.target.value);
+                              // Update personality traits in state
+                              const updatedPersonality = { ...personality };
+                              updatedPersonality.personalityTraits = {
+                                ...updatedPersonality.personalityTraits,
+                                [trait]: newValue
+                              };
+                              // Update personalities state with updated personality
+                              setPersonalities(personalities.map(p => p.id === updatedPersonality.id ? updatedPersonality : p));
+                              // Also update selectedPersonality to trigger re-render
+                              setSelectedPersonality(updatedPersonality.id);
+                            }}
+                            className="w-full"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
+          )}
+
+
+                  {/* Memory Information */}
+                  <div className={`mt-6 p-4 rounded ${
+                    theme === 'futuristic'
+                      ? 'bg-purple-900/20 border border-purple-500/30'
+                      : 'bg-purple-50 border border-purple-200'
+                  }`}>
+                    <h4 className={`font-medium mb-2 ${
+                      theme === 'futuristic' ? 'text-purple-300' : 'text-purple-800'
+                    }`}>
+                      💾 Memory System
+                    </h4>
+                    <p className={`text-sm ${
+                      theme === 'futuristic' ? 'text-gray-300' : 'text-gray-700'
+                    }`}>
+                      Each AI Person maintains their own memory including:
+                    </p>
+                    <ul className={`text-sm mt-2 space-y-1 ${
+                      theme === 'futuristic' ? 'text-gray-400' : 'text-gray-600'
+                    }`}>
+                      <li>• Conversation history and context</li>
+                      <li>• Learned facts and information</li>
+                      <li>• User preferences and relationships</li>
+                      <li>• Experiences across sessions</li>
+                    </ul>
+                  </div>
+                </>
+              )}
+            </div>
+          )}
 
           {/* Appearance Tab */}
           {activeTab === 'appearance' && (
@@ -432,30 +1082,6 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
                         : 'border border-gray-300 bg-white'
                     }`}
                   />
-                </div>
-
-                <div>
-                  <label className={`block text-sm font-medium mb-2 ${
-                    theme === 'futuristic' ? 'text-cyan-300' : 'text-gray-700'
-                  }`}>
-                    Personality
-                  </label>
-                  <select
-                    value={settings.personality}
-                    onChange={(e) => updateSetting('personality', e.target.value)}
-                    className={`w-full p-3 rounded ${
-                      theme === 'futuristic'
-                        ? 'cyber-input'
-                        : 'border border-gray-300 bg-white'
-                    }`}
-                  >
-                    <option value="assistant">Professional Assistant</option>
-                    <option value="friendly">Friendly Companion</option>
-                    <option value="romantic">Romantic Partner</option>
-                    <option value="mentor">Wise Mentor</option>
-                    <option value="playful">Playful Friend</option>
-                    <option value="custom">Custom Personality</option>
-                  </select>
                 </div>
 
                 <div>

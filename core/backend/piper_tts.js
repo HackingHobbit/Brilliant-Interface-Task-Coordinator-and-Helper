@@ -4,17 +4,26 @@ import path from "path";
 
 // Piper TTS configuration
 const PIPER_VOICE = process.env.PIPER_VOICE || "en_GB-alba-medium";
-const VOICES_DIR = process.env.VOICES_DIR || path.resolve(process.cwd(), "../../media/assets/voices");
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const VOICES_DIR = process.env.VOICES_DIR || resolve(__dirname, "../../media/assets/voices");
 
 const execCommand = (command) => {
   return new Promise((resolve, reject) => {
-    exec(command, (error, stdout, stderr) => {
+    exec(command, { env: process.env }, (error, stdout, stderr) => {
+      console.log(`Executing command: ${command}`);
       if (error) {
         console.error(`Command failed: ${command}`);
         console.error(`Error: ${error.message}`);
         console.error(`Stderr: ${stderr}`);
         reject(error);
       } else {
+        console.log(`Command succeeded: ${command}`);
+        console.log(`Stdout: ${stdout}`);
         resolve(stdout);
       }
     });
@@ -50,7 +59,7 @@ export const generateSpeech = async (text, outputPath) => {
       .replace(/\r/g, ' ');    // Replace carriage returns with spaces
 
     // Generate speech using Piper TTS
-    const piperCommand = `echo "${escapedText}" | python3 -m piper --model "${voiceModelPath}" --output_file "${absoluteOutputPath}"`;
+    const piperCommand = `echo "${escapedText}" | piper --model "${voiceModelPath}" --output_file "${absoluteOutputPath}"`;
     console.log(`Running Piper command: ${piperCommand}`);
     await execCommand(piperCommand);
 

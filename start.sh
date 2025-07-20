@@ -50,17 +50,66 @@ kill_port() {
     fi
 }
 
-# Function to check if LM Studio is running
-check_lm_studio() {
+# Function to start LM Studio server
+start_lm_studio() {
+    local lms_path="/Users/josephbeaman/.cache/lm-studio/bin/lms"
+    
+    # Check if LMS CLI exists
+    if [[ ! -f "$lms_path" ]]; then
+        echo -e "${YELLOW}⚠️  LM Studio CLI not found at $lms_path${NC}"
+        echo -e "${YELLOW}   Please install LM Studio or update the path in this script${NC}"
+        return 1
+    fi
+    
+    echo -e "${BLUE}🚀 Starting LM Studio server...${NC}"
+    
+    # Start LM Studio server with CORS enabled (required for web app)
+    "$lms_path" server start --port 1234 --cors --quiet &
+    LMS_PID=$!
+    
+    # Wait for LM Studio to start
+    local max_attempts=30
+    local attempt=1
+    
+    echo -e "${BLUE}⏳ Waiting for LM Studio server to start...${NC}"
+    
+    while [ $attempt -le $max_attempts ]; do
+        if curl -s "$LM_STUDIO_URL/v1/models" >/dev/null 2>&1; then
+            echo -e "${GREEN}✅ LM Studio server started successfully${NC}"
+            return 0
+        fi
+        
+        echo -n "."
+        sleep 2
+        attempt=$((attempt + 1))
+    done
+    
+    echo -e "\n${RED}❌ LM Studio server failed to start within $((max_attempts * 2)) seconds${NC}"
+    return 1
+}
+
+# Function to check if LM Studio is running, and start it if not
+check_and_start_lm_studio() {
     echo -e "${BLUE}🔍 Checking LM Studio connection...${NC}"
     if curl -s "$LM_STUDIO_URL/v1/models" >/dev/null 2>&1; then
-        echo -e "${GREEN}✅ LM Studio is running and accessible${NC}"
+        echo -e "${GREEN}✅ LM Studio is already running and accessible${NC}"
         return 0
     else
         echo -e "${YELLOW}⚠️  LM Studio not detected at $LM_STUDIO_URL${NC}"
-        echo -e "${YELLOW}   Please ensure LM Studio is running with a model loaded${NC}"
-        echo -e "${YELLOW}   The application will start but AI features won't work${NC}"
-        return 1
+        echo -e "${BLUE}🔄 Attempting to start LM Studio server...${NC}"
+        
+        if start_lm_studio; then
+            echo -e "${GREEN}✅ LM Studio server started successfully${NC}"
+            return 0
+        else
+            echo -e "${RED}❌ Failed to start LM Studio server${NC}"
+            echo -e "${YELLOW}   Please ensure:${NC}"
+            echo -e "${YELLOW}   • LM Studio is installed${NC}"
+            echo -e "${YELLOW}   • A model is loaded (currently expecting: llama-3-8b-lexi-uncensored)${NC}"
+            echo -e "${YELLOW}   • No firewall is blocking port 1234${NC}"
+            echo -e "${YELLOW}   The application will start but AI features won't work${NC}"
+            return 1
+        fi
     fi
 }
 
@@ -116,8 +165,8 @@ main() {
     kill_port $BACKEND_PORT "backend"
     kill_port $FRONTEND_PORT "frontend"
     
-    # Check LM Studio (optional)
-    check_lm_studio || true
+    # Check and start LM Studio if needed
+    check_and_start_lm_studio || true
     
     # Check if we're in the right directory
     if [[ ! -f "package.json" ]] || [[ ! -d "core" ]]; then
@@ -135,8 +184,8 @@ main() {
     echo -e "${BLUE}🚀 Starting backend server...${NC}"
     cd core/backend
 
-    # Start backend with error logging
-    npm start > backend.log 2>&1 &
+    # Start backend with logs output to terminal
+    npm start &
     BACKEND_PID=$!
     cd ../..
     
@@ -183,7 +232,7 @@ main() {
     echo -e "${BLUE}📝 Press Ctrl+C to stop all services${NC}"
     
     # Set up cleanup on exit
-    trap 'echo -e "\n${YELLOW}🛑 Shutting down services...${NC}"; kill $BACKEND_PID $FRONTEND_PID 2>/dev/null || true; exit 0' INT TERM
+    trap 'echo -e "\n${YELLOW}🛑 Shutting down services...${NC}"; kill $BACKEND_PID $FRONTEND_PID ${LMS_PID:-} 2>/dev/null || true; exit 0' INT TERM
     
     # Keep script running and monitor services
     echo -e "${BLUE}🔄 Monitoring services... Press Ctrl+C to stop${NC}"

@@ -108,6 +108,16 @@ read -p "🤖 Do you want to stop LM Studio as well? (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "🔍 Stopping LM Studio..."
+    
+    # Try to use LM Studio CLI for clean shutdown
+    lms_path="/Users/josephbeaman/.cache/lm-studio/bin/lms"
+    if [[ -f "$lms_path" ]]; then
+        echo "🛑 Using LM Studio CLI to stop server..."
+        "$lms_path" server stop 2>/dev/null || true
+        sleep 2
+    fi
+    
+    # Fallback to process killing
     kill_process "LM Studio" "LM Studio"
     kill_port 1234 "LM Studio API"
 else

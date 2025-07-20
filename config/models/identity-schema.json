@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Person Identity Schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier (UUID) for the AI Person"
+    },
+    "coreIdentity": {
+      "type": "string",
+      "const": "BITCH",
+      "description": "Fixed core identity"
+    },
+    "role": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Role name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Role description"
+        }
+      },
+      "required": ["name"]
+    },
+    "personality": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Personality display name"
+        },
+        "traits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of personality traits"
+        },
+        "avatar": {
+          "type": "string",
+          "description": "Reference to avatar asset"
+        },
+        "voice": {
+          "type": "string",
+          "description": "Reference to voice asset"
+        }
+      },
+      "required": ["name"]
+    }
+  },
+  "required": ["id", "coreIdentity", "role", "personality"]
+}
