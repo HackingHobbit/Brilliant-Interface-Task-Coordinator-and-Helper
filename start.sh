@@ -180,14 +180,19 @@ main() {
         npm install
     fi
     
-    # Start backend
-    echo -e "${BLUE}🚀 Starting backend server...${NC}"
-    cd core/backend
+# Start backend
+echo -e "${BLUE}🚀 Starting backend server...${NC}"
+cd core/backend
 
-    # Start backend with logs output to terminal
-    npm start &
-    BACKEND_PID=$!
-    cd ../..
+# Start Piper TTS server with required arguments
+echo -e "${BLUE}🚀 Starting Piper TTS server...${NC}"
+piper-tts --model en_GB-alba-medium.onnx --port 5002 &
+
+# Start backend with logs output to terminal
+npm start &
+BACKEND_PID=$!
+cd ../..
+
     
     # Wait for backend to start
     if ! wait_for_service $BACKEND_PORT "Backend"; then

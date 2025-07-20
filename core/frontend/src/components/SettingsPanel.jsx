@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+  import { useState, useEffect } from 'react';
 import { useChat } from '../hooks/useChat';
 
 export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeChange }) => {
@@ -210,31 +210,39 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
   const updateIdentity = async () => {
     setIsLoadingIdentity(true);
     setIdentityError(null);
-    
+
     try {
       const backendUrl = 'http://localhost:3000';
-      
+
+      // Validate selectedPersonality before sending update
+      if (!selectedPersonality || selectedPersonality.trim() === '') {
+        setIdentityError('Please select a valid personality before updating.');
+        setIsLoadingIdentity(false);
+        return;
+      }
+
       // If we have a selected AI Person, update it instead of creating new
       if (selectedAiPerson) {
         // First update the AI Person itself if needed
         const currentPerson = aiPersons.find(p => p.id === selectedAiPerson);
-        if (currentPerson && (currentPerson.roleId !== selectedRole || currentPerson.personalityId !== selectedPersonality)) {
+        if (currentPerson && (currentPerson.roleId !== selectedRole || currentPerson.personalityId !== selectedPersonality || currentPerson.name !== newAiPersonName || currentPerson.customPrompt !== customPersonalityPrompt)) {
           const updateResponse = await fetch(`${backendUrl}/api/ai-persons/${selectedAiPerson}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               roleId: selectedRole,
               personalityId: selectedPersonality,
+              name: newAiPersonName.trim(),
               customPrompt: customPersonalityPrompt || undefined
             })
           });
-          
+
           if (!updateResponse.ok) {
             throw new Error('Failed to update AI Person');
           }
         }
       }
-      
+
       // Then update the session identity
       const response = await fetch(`${backendUrl}/identity/update`, {
         method: 'POST',
@@ -247,7 +255,7 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
           customPrompt: customPersonalityPrompt || undefined
         })
       });
-      
+
       if (response.ok) {
         const data = await response.json();
         setCurrentIdentity(data.identity);
@@ -653,11 +661,13 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
                             const traits = personality.personalityTraits;
                             const traitDescriptions = [];
                             
-                            if (traits.enthusiasm > 0.7) traitDescriptions.push('Enthusiastic');
-                            if (traits.formality > 0.7) traitDescriptions.push('Formal');
-                            else if (traits.formality < 0.3) traitDescriptions.push('Casual');
-                            if (traits.humor > 0.7) traitDescriptions.push('Humorous');
-                            if (traits.empathy > 0.7) traitDescriptions.push('Empathetic');
+                            if (typeof traits.enthusiasm === 'number' && traits.enthusiasm > 0.7) traitDescriptions.push('Enthusiastic');
+                            if (typeof traits.formality === 'number') {
+                              if (traits.formality > 0.7) traitDescriptions.push('Formal');
+                              else if (traits.formality < 0.3) traitDescriptions.push('Casual');
+                            }
+                            if (typeof traits.humor === 'number' && traits.humor > 0.7) traitDescriptions.push('Humorous');
+                            if (typeof traits.empathy === 'number' && traits.empathy > 0.7) traitDescriptions.push('Empathetic');
                             
                             return traitDescriptions.length > 0 ? traitDescriptions.join(', ') : 'Balanced personality';
                           })()}
@@ -764,37 +774,38 @@ export const SettingsPanel = ({ isOpen, onClose, theme = 'futuristic', onThemeCh
                       <h5 className={`font-semibold mb-2 ${
                         theme === 'futuristic' ? 'text-cyan-300' : 'text-gray-700'
                       }`}>Adjust Personality Traits</h5>
-                      {Object.entries(traits).map(([trait, value]) => (
-                        <div key={trait} className="mb-3">
-                          <label htmlFor={`trait-${trait}`} className={`block text-sm font-medium mb-1 ${
-                            theme === 'futuristic' ? 'text-gray-300' : 'text-gray-700'
-                          }`}>
-                            {trait.charAt(0).toUpperCase() + trait.slice(1)}: {value.toFixed(2)}
-                          </label>
-                          <input
-                            id={`trait-${trait}`}
-                            type="range"
-                            min={-1}
-                            max={1}
-                            step={0.01}
-                            value={value}
-                            onChange={(e) => {
-                              const newValue = parseFloat(e.target.value);
-                              // Update personality traits in state
-                              const updatedPersonality = { ...personality };
-                              updatedPersonality.personalityTraits = {
-                                ...updatedPersonality.personalityTraits,
-                                [trait]: newValue
-                              };
-                              // Update personalities state with updated personality
-                              setPersonalities(personalities.map(p => p.id === updatedPersonality.id ? updatedPersonality : p));
-                              // Also update selectedPersonality to trigger re-render
-                              setSelectedPersonality(updatedPersonality.id);
-                            }}
-                            className="w-full"
-                          />
-                        </div>
-                      ))}
+                          {Object.entries(traits).map(([trait, value]) => (
+                            <div key={trait} className="mb-3">
+                              <label htmlFor={`trait-${trait}`} className={`block text-sm font-medium mb-1 ${
+                                theme === 'futuristic' ? 'text-gray-300' : 'text-gray-700'
+                              }`}>
+                                {trait.charAt(0).toUpperCase() + trait.slice(1)}: {typeof value === 'number' ? value.toFixed(2) : 'N/A'}
+                              </label>
+                              <input
+                                id={`trait-${trait}`}
+                                type="range"
+                                min={-1}
+                                max={1}
+                                step={0.01}
+                                value={typeof value === 'number' ? value : 0}
+                                onChange={(e) => {
+                                  const newValue = parseFloat(e.target.value);
+                                  // Update personality traits in state
+                                  const updatedPersonality = { ...personality };
+                                  updatedPersonality.personalityTraits = {
+                                    ...updatedPersonality.personalityTraits,
+                                    [trait]: newValue
+                                  };
+                                  // Update personalities state with updated personality
+                                  setPersonalities(personalities.map(p => p.id === updatedPersonality.id ? updatedPersonality : p));
+                                  // Also update selectedPersonality to trigger re-render
+                                  setSelectedPersonality(updatedPersonality.id);
+                                }}
+                                className="w-full"
+                              />
+                            </div>
+                          ))}
+
                     </div>
                   </div>
                 );
