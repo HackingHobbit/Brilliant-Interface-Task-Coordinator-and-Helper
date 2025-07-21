@@ -181,10 +181,12 @@ app.get("/identity/current/:sessionId", async (req, res) => {
         aiPersonId: identity.metadata.aiPersonId,
         role: identity.role.name,
         roleId: identity.metadata.roleId,
-        personality: identity.presentation.name,
+        personality: identity.presentation.name, // Keep for backward compatibility
         personalityId: identity.metadata.personalityId,
+        presentation: identity.presentation, // Include full presentation object
         avatar: identity.presentation.avatar,
-        voice: identity.presentation.voice
+        voice: identity.presentation.voice,
+        customPrompt: identity.presentation.customPrompt || ''
       }
     });
   } catch (error) {
@@ -206,8 +208,12 @@ app.post("/identity/update", async (req, res) => {
     
     let identity;
     if (aiPersonId && aiPersonsStore.has(aiPersonId)) {
-      // Update existing AI Person
-      identity = identityManager.updateAIPersonIdentity(aiPersonId, roleId, personalityId);
+      // Get the existing AI Person to preserve custom name
+      const existingPerson = aiPersonsStore.get(aiPersonId);
+      const customName = existingPerson.presentation.name;
+      
+      // Update existing AI Person - pass the custom name
+      identity = identityManager.updateAIPersonIdentity(aiPersonId, roleId, personalityId, customName);
       
       // Apply custom prompt if provided
       if (customPrompt !== undefined) {
@@ -240,8 +246,9 @@ app.post("/identity/update", async (req, res) => {
         aiPersonId: identity.metadata.aiPersonId,
         role: identity.role.name,
         roleId: identity.metadata.roleId,
-        personality: identity.presentation.name,
+        personality: identity.presentation.name, // Keep for backward compatibility
         personalityId: identity.metadata.personalityId,
+        presentation: identity.presentation, // Include full presentation object
         avatar: identity.presentation.avatar,
         voice: identity.presentation.voice,
         customPrompt: identity.presentation.customPrompt
@@ -565,7 +572,7 @@ async function addToConversationHistory(sessionId, userMessage, assistantRespons
   console.log(`💾 Session ${sessionId} now has ${session.messages.length} messages`);
 }
 
-function buildMessagesArray(sessionId, currentUserMessage) {
+async function buildMessagesArray(sessionId, currentUserMessage) {
   const session = getOrCreateSession(sessionId);
   
   // Get the AI Person identity for this session
@@ -579,8 +586,22 @@ function buildMessagesArray(sessionId, currentUserMessage) {
     session.aiPersonId = defaultAiPerson.metadata.aiPersonId;
   }
 
-  // Get relevant context from memory
-  const memoryContext = memoryManager.getRelevantContext(identity.metadata.aiPersonId, currentUserMessage);
+  console.log('🔍 DEBUG: Starting fact extraction process');
+  console.log('🔍 DEBUG: Current user message:', currentUserMessage);
+  console.log('🔍 DEBUG: AI Person ID:', identity.metadata.aiPersonId);
+  console.log('🔍 DEBUG: Session ID:', sessionId);
+  
+  // Get enhanced context from memory with automatic fact integration
+  const memoryContext = memoryManager.getEnhancedContext(identity.metadata.aiPersonId, currentUserMessage);
+  
+  // Process message for real-time fact extraction
+  try {
+    console.log('🔍 DEBUG: Calling processMessageForFacts...');
+    await memoryManager.processMessageForFacts(sessionId, identity.metadata.aiPersonId, currentUserMessage);
+    console.log('🔍 DEBUG: processMessageForFacts completed successfully');
+  } catch (error) {
+    console.error('❌ DEBUG: Error in processMessageForFacts:', error);
+  }
   
   // Generate dynamic system prompt based on identity
   let basePrompt = identityManager.generateSystemPrompt(identity);
@@ -678,7 +699,7 @@ app.post("/chat", async (req, res) => {
     console.log("Using fully local setup: LM Studio + Piper TTS + wawa-lipsync");
 
     // Build messages array with conversation history
-    const conversationMessages = buildMessagesArray(sessionId, userMessage || "Hello");
+    const conversationMessages = await buildMessagesArray(sessionId, userMessage || "Hello");
 
     const completion = await openai.chat.completions.create({
       model: LM_STUDIO_MODEL,

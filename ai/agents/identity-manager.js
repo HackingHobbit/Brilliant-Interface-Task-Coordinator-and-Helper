@@ -178,14 +178,24 @@ class IdentityManager {
    * @param {string} aiPersonId - AI Person identifier
    * @param {string} roleId - New role identifier
    * @param {string} personalityId - New personality identifier
+   * @param {string} customName - Optional custom name to preserve
+   * @param {string} customPrompt - Optional custom personality prompt to preserve
    * @returns {object} Updated layered identity
    */
-  updateAIPersonIdentity(aiPersonId, roleId, personalityId) {
+  updateAIPersonIdentity(aiPersonId, roleId, personalityId, customName = null, customPrompt = null) {
     if (!aiPersonId) {
       throw new Error("AI Person ID is required for updates");
     }
 
-    const identity = this.createIdentity(roleId, personalityId, aiPersonId);
+    // Create base identity
+    const identity = this.createIdentity(roleId, personalityId, aiPersonId, customName);
+
+    // Apply custom personality prompt if provided
+    if (customPrompt !== null) {
+      identity.presentation.personalityPrompt = customPrompt;
+      identity.presentation.customPrompt = customPrompt;
+    }
+
     identity.metadata.lastModified = new Date().toISOString();
     
     console.log(`🔄 Updated AI Person ${aiPersonId}: ${identity.presentation.name} as ${identity.role.name}`);
@@ -237,6 +247,11 @@ class IdentityManager {
       if (traits.empathy > 0.7) {
         systemPrompt += "\nYou show high empathy and emotional understanding.";
       }
+    }
+
+    // Add custom personality prompt if available
+    if (identity.presentation.customPrompt) {
+      systemPrompt += "\n\nCUSTOM PERSONALITY:\n" + identity.presentation.customPrompt;
     }
 
     // Add presentation name
